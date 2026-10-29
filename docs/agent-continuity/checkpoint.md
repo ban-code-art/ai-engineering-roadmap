@@ -12,12 +12,11 @@
 
 ## Active Step
 
-- 已完成顶部四类课程入口：/learn、/project、/project/langchain、/project/rag，旧概览/通用分类退出顶部；首页仍可通过品牌/侧栏进入。构建、17测试、类型、五条路由和Chrome逐项高亮检查通过，准备同步本轮修改。
+- 已完成顶部四类课程入口：/learn、/project、/project/langchain、/project/rag，旧概览/通用分类退出顶部；首页仍可通过品牌/侧栏进入。构建、17测试、类型、五条路由和Chrome逐项高亮检查通过，代码提交e6d1f75已上传远程main。
 
 ## Remaining
 
 - 后续重新设计首批新教学内容，基础教程与项目实践均从零编写。
-- 后续重新设计/编写首批基础教程和项目实践，不做旧内容迁移。
 - 禁用JS浏览器、初学者/PyCharm、Node24本地及远程部署等尚未全验收。
 
 ## Blockers
