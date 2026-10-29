@@ -10,12 +10,12 @@
 
 ## Active Step
 
-- 本批内容与验收完成，准备页面与文档提交B同步仓库；源码A已发布。
+- 本批完成并推送页面B f7f63dd8905dc5b2659eb856058c61bb3cc9ba0f；GitHub CI 40864156475 的web/labs均success，Linux完整依赖安装与检查通过。
 
 ## Remaining
 
 - 本次停在F03。下一批W02为F04–F06：解释创建应用、启动/请求/停止与恢复，不提前完整CRUD/数据库/身份。
-- 真实初学者/PyCharm参与者、完整浏览器禁JS、macOS/Linux本地完整安装仍为独立验收边界；CI增加POSIX完整环境，远端结果另读。
+- 真实初学者/PyCharm参与者、完整浏览器禁JS、macOS本地完整安装仍为独立验收边界；Linux完整环境已由CI验证。
 
 ## Blockers
 
@@ -23,4 +23,4 @@
 
 ## Next Safe Action
 
-- 推送页面B并核对远端；后续继续指令从W02开始，不扩写全课程。
+- 后续继续指令从W02开始，不扩写全课程；W01已发布并验收。

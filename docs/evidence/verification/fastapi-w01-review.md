@@ -18,7 +18,7 @@
 
 - Windows 全新用户临时目录创建 `.venv`，Python3.12.4 + FastAPI0.162.0/Uvicorn0.54.0/Pydantic2.14.1；实际 pip 安装14包锁、导入检查、pip check通过。
 - 错CWD/错解释器分别失败，恢复后重新显示OK。F03全部短例子和9项真实行为测试通过。详情见 [labs记录](fastapi-w01-labs.json)。
-- PowerShell解析、Git Bash的两份POSIX脚本语法通过。CI另加入POSIX完整环境安装；其远端结果与本地作者证据分开记录。
+- PowerShell解析、Git Bash两份POSIX脚本语法通过。页面提交f7f63dd的[CI40864156475](https://github.com/ban-code-art/ai-engineering-roadmap/actions/runs/40864156475)已success：Linux完整环境创建、锁安装、pip check与检查工具通过，web/labs各步骤均成功。远端结果与本地作者证据分开记录。
 - 临时空Git仓库经固定tag成功取源，`is-shallow=true`、文件hash通过；错误期望SHA被拒绝，私有refs完整清理。使用既有网络代理只影响该临时仓库。
 - 源解析测试拒绝缺对象/错误hash/未知目录/越界路径/错误行号；修改工作文件后仍读取固定Git对象。
 
@@ -33,7 +33,7 @@
 ## 验证边界
 
 - 没有真实初学者/PyCharm参与者，作者环境运行不替代学习者跟做。
-- 本地macOS/Linux只做shell语法检查；完整安装依赖CI结果。
+- macOS本地只做shell语法检查；Linux完整安装由上述CI验证。
 - 完整浏览器关闭JavaScript的操作未完成。无JS默认阅读以SSR渲染/HTML检查及原生details语义证明，保留完整浏览器验收项。
 - Windows实际运行补丁为3.12.4；正文提供3.12.10安装入口，不声称该补丁已实际复测。
 - F01响应和流程图明确标为教学示意，没有冒充本地HTTP执行结果。

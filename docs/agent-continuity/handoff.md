@@ -3,8 +3,8 @@
 ## Snapshot
 
 - Goal: 依据FA-CURRICULUM-1.0逐批写通俗、独立页面的FastAPI基础课，长期完成TaskBoard API demo。
-- Progress: W01/F01–F03正文、lab、SVG、导航已完成；源A739a064与tag已推送，页面B待同步。23前端检查/9Python测试、干净Windows环境、构建/类型/双模式路由、桌面手机/双主题通过。
-- Next: 同步页面B后结束本批；下次从W02/F04–F06首接口创建/启动/排错校准开始。
+- Progress: W01/F01–F03已发布；源A739a064与tag固定，页面B f7f63dd已推送，CI40864156475的web/labs成功。23前端检查/9Python测试、Windows与Linux完整环境、构建/类型/路由、桌面手机/双主题通过。
+- Next: 本批结束；下次从W02/F04–F06首接口创建/启动/排错校准开始。
 
 ## Read First
 
@@ -20,7 +20,7 @@
 ## Current Risks
 
 - 真实初学者/PyCharm跟做、完整浏览器禁JS未完成；SSR默认正文/代码/SVG已验证，不夸大学习效果。
-- Windows作者3.12.4实测；3.12.10仅安装入口。POSIX本地只语法检查，CI新增完整安装，结果另确认。
+- Windows作者3.12.4实测，3.12.10仅安装入口；Linux完整环境CI通过，macOS本地仍未运行。
 - 本机npm用户配置冲突可用--userconfig=NUL命令级覆盖，不改全局设置。
 - 本地生产3000与预览3001已重新启动。重建前核对监听PID和命令身份再停止，避免Windows文件锁。
 
