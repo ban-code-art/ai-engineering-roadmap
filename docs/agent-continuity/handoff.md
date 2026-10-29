@@ -3,7 +3,7 @@
 ## Snapshot
 
 - Goal: 依据FA-CURRICULUM-1.0逐批写通俗、独立页面的FastAPI基础课，长期完成TaskBoard API demo。
-- Progress: 最新Windows/通俗理解补充完成：F02/F03共12组系统命令默认PowerShell，F01–F03生活类比回到准确机制；全局设计LC-DOCS-2.2，29检查/构建/类型与桌面切换/复制通过，待本次同步。2.1纯代码/配色保留，源码A739a064与15文件hash未改。
+- Progress: Windows/通俗理解补充已推送988c0a6，CI40873591725 success：12命令组默认PowerShell，三章生活类比回到准确机制；LC-DOCS-2.2、29检查/构建/类型和桌面切换/复制通过。2.1纯代码/配色保留，源码A739a064与15文件hash未改。
 - Next: 本批结束；下次从W02/F04–F06首接口创建/启动/排错校准开始。
 
 ## Read First

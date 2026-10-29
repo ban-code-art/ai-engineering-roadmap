@@ -10,7 +10,7 @@
 
 ## Active Step
 
-- Windows命令和通俗讲解已补充：F02/F03共12组操作默认PowerShell、可切POSIX，生活类比映射回代码；LC-DOCS-2.2与AGENTS长期要求更新，29检查/构建/类型、桌面切换与55字符复制通过，准备同步。不开始W02。
+- Windows命令和通俗讲解已推送988c0a6，CI40873591725的web/labs均success：12组操作默认PowerShell、可切POSIX，生活类比映射回代码；LC-DOCS-2.2/AGENTS更新，29检查/构建/类型、桌面切换/复制通过。本轮结束，不开始W02。
 
 ## Remaining
 

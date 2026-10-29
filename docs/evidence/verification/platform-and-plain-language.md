@@ -15,3 +15,4 @@
 - 复制Windows运行命令55字符与固定源码一致。截图见[Windows命令入口](platform-and-plain-language/windows-desktop.png)。
 - 独立交叉审阅核对12组行区间和生活类比，修正“Mac/Linux只改解释器路径”为“解释器入口和路径写法”，避免忽略路径分隔符。
 - 教学源和manifest未变，之前Windows/Linux完整运行证据继续适用。本次新增手机浏览器核查因连接中断未完成，不把桌面结果当手机实测；原生SSR/同一响应式组件检查通过。
+- 提交988c0a6592036d433559f753de86245012be9505已推送；[CI40873591725](https://github.com/ban-code-art/ai-engineering-roadmap/actions/runs/40873591725)的web与labs全部通过。
