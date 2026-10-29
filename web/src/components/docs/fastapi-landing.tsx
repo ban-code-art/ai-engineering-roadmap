@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { DocsShell } from "./docs-shell";
 import { DocsSection, DocsCallout } from "./document-primitives";
+import { LessonCards } from "./lesson-cards";
 import { fastapiChapters, chapterHref } from "@/content/fastapi/course";
 import { sectionTargets, siteSearchEntries } from "@/content/site";
 
@@ -14,9 +15,10 @@ export function FastapiLanding() {
     </DocsCallout>
     <DocsSection id="start-here" title="从这里开始">
       <p>不要求先搭建后端服务。按下面的顺序学习，前一章会准备好下一章需要的概念和环境。</p>
-      <ol className="docs-course-chapters">{fastapiChapters.map(chapter => <li key={chapter.id}>
-        <Link href={chapterHref(chapter.slug)}><span className="docs-chapter-number">{chapter.id}</span><span><strong>{chapter.title}</strong><span className="docs-chapter-summary">{chapter.summary}</span></span><span aria-hidden="true">→</span></Link>
-      </li>)}</ol>
+      <LessonCards label="已发布的入门章节" cards={fastapiChapters.map((chapter,index)=>({
+        title:`${chapter.id} · ${chapter.title}`,description:chapter.summary,href:chapterHref(chapter.slug),
+        icon:index===0?"request":index===1?"terminal":"code",tone:index===0?"blue":index===1?"green":"amber",
+      }))}/>
     </DocsSection>
     <DocsSection id="course-path" title="后续学习路线">
       <p>这门课会始终围绕同一个任务管理 API 逐步成长。先完成可运行的基础版本，再引入相应的工程习惯。</p>
@@ -31,7 +33,7 @@ export function FastapiLanding() {
     </DocsSection>
     <DocsSection id="how-to-learn" title="怎样跟着学习">
       <p>每章先解释一个小目标，再给少量代码和可观察的结果。先预测输出，运行后对照；遇到错误先确认文件位置、解释器与命令，再使用本章完整源码恢复。</p>
-      <p>代码框中的“查看源码”会跳转到 GitHub 上与当前讲解一致的固定版本。基础课里的完整 demo 会随课程增长；其他独立实践可从顶部课程入口进入。</p>
+      <p>每个代码块下方的“查看源码”会跳转到 GitHub 上与当前讲解一致的固定版本。基础课里的完整 demo 会随课程增长；其他独立实践可从顶部课程入口进入。</p>
       <p><Link href={chapterHref(fastapiChapters[0].slug)}>开始第一章：读懂 HTTP 请求与响应 →</Link></p>
     </DocsSection>
   </DocsShell>;

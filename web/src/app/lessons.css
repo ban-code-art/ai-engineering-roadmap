@@ -1,5 +1,21 @@
-.docs-code-heading {flex:1;min-width:0;}
-.docs-code-source-link {font-size:12px;line-height:20px;white-space:nowrap;color:var(--docs-primary)!important;}
+.docs-code-source-link {font-size:12px;line-height:20px;white-space:nowrap;color:var(--docs-blue)!important;}
+.docs-lesson-cards {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin:24px 0 32px;}
+.docs-lesson-card {
+  --docs-card-bg:var(--docs-card-blue);--docs-card-ink:var(--docs-card-blue-ink);
+  display:flex;flex-direction:column;min-width:0;border:1px solid color-mix(in srgb,var(--docs-card-ink) 20%,var(--docs-card-bg));
+  border-radius:16px;padding:22px;background:var(--docs-card-bg);color:var(--docs-card-ink)!important;
+}
+.docs-lesson-card[data-tone="green"] {--docs-card-bg:var(--docs-card-green);--docs-card-ink:var(--docs-card-green-ink);}
+.docs-lesson-card[data-tone="amber"] {--docs-card-bg:var(--docs-card-amber);--docs-card-ink:var(--docs-card-amber-ink);}
+.docs-lesson-card-heading {display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:18px;}
+.docs-lesson-card-heading svg {flex-shrink:0;width:24px;height:24px;}
+.docs-lesson-card-arrow {font-size:18px;line-height:24px;}
+.docs-lesson-card-title {display:block;color:var(--docs-ink);font-size:17px;line-height:26px;font-weight:600!important;text-wrap:balance;}
+.docs-lesson-card-description {font-size:14px;line-height:24px;margin-top:8px;overflow-wrap:anywhere;}
+.docs-lesson-card-description p {margin-bottom:0;}
+.docs-lesson-card-description code {background:color-mix(in srgb,var(--docs-card-ink) 8%,transparent);padding:1px 4px;border-radius:4px;font-size:13px;}
+.docs-lesson-card[href] {transition:border-color .18s ease,background-color .18s ease;}
+.docs-lesson-card[href]:hover {border-color:color-mix(in srgb,var(--docs-card-ink) 55%,var(--docs-card-bg));background:color-mix(in srgb,var(--docs-card-ink) 3%,var(--docs-card-bg));}
 .docs-course-chapters {list-style:none;padding:0;margin:24px 0;}
 .docs-course-chapters li {border-bottom:1px solid var(--docs-border);}
 .docs-course-chapters a {display:flex;align-items:center;gap:20px;padding:20px 0;}
@@ -21,3 +37,10 @@
   .docs-course-chapters a {gap:12px;}
   .docs-lesson-pagination {gap:16px;}
 }
+@media(max-width:639px) {
+  .docs-lesson-cards {grid-template-columns:minmax(0,1fr);gap:12px;}
+  .docs-lesson-card {padding:20px;}
+  .docs-code-reference {flex-wrap:wrap;}
+  .docs-code-reference>.docs-source-details {min-width:0;}
+}
+@media(prefers-reduced-motion:reduce) {.docs-lesson-card[href] {transition:none;}}

@@ -12,7 +12,7 @@
 
 | 任务 | 依据 |
 | --- | --- |
-| 页面布局、颜色、字体与阅读交互 | [前端页面设计LC-DOCS-2.0](docs/planning/frontend-page-design.md) |
+| 页面布局、颜色、字体与阅读交互 | [前端页面设计LC-DOCS-2.1](docs/planning/frontend-page-design.md) |
 | FastAPI教程的分区、独立章节、前置、demo演进、配图与源码入口 | [FastAPI课程设计FA-CURRICULUM-1.0](docs/planning/fastapi-curriculum.md) |
 | 解释深度、分块、源码、预测与恢复 | [重新编写规范](docs/planning/writing-standard.md) |
 | 分批实施顺序 | [路线](docs/planning/roadmap.md) |
@@ -25,3 +25,5 @@
 ## 接续
 
 当前进度见[handoff.md](docs/agent-continuity/handoff.md)。W01 三章已编写，源码先发布再固定引用到页面；W02 及后续逐批推进，不恢复旧材料，不提前开放未完成章节。
+
+用户最新视觉要求：代码框只显示代码和复制按钮，来源/版本放框后；借鉴LangChain局部行高亮与卡片，使用分层蓝灰阅读面、淡色对照和现有图形，减少大片纯白。具体以2.1规则为准，教学源码的固定SHA继续保留。

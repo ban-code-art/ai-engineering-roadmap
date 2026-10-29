@@ -12,11 +12,15 @@ export function getSource(id: string) {
 }
 
 export async function getSourceSample(id: string, options: {
-  start?: number; end?: number; label?: string; language?: string;
+  start?: number; end?: number; label?: string; language?: string; highlightLines?: number[];
 } = {}) {
   const ref = getSource(id);
   const snippet = extractSnippet(ref.code, options.start, options.end);
   const language = options.language ?? ref.language;
+  const emphasis = options.highlightLines ?? [];
+  if (emphasis.some(line=>!Number.isInteger(line)||line<snippet.start||line>snippet.end)) {
+    throw new Error(`Highlighted source line outside displayed range: ${id}`);
+  }
   const input = {
     id: `${id}-${snippet.start}-${snippet.end}`,
     label: options.label ?? ref.path,
@@ -25,6 +29,7 @@ export async function getSourceSample(id: string, options: {
     sourceHash: ref.sha256,
     checkpoint: `W01 · ${ref.commit.slice(0, 7)} · L${snippet.start}–L${snippet.end}`,
     sourceUrl: sourceHref(ref, snippet.start, snippet.end),
+    highlightLines: [...new Set(emphasis)].sort((a,b)=>a-b).map(line=>line-snippet.start+1),
   };
   if (language === "text") return { ...input, lines: [] };
   return highlightSample(input, language as BundledLanguage);

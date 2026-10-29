@@ -1,6 +1,7 @@
 import { DocsAccordion, DocsCallout, DocsSection } from "@/components/docs/document-primitives";
 import { LessonCode } from "@/components/docs/lesson-code";
 import { LessonDiagram } from "@/components/docs/lesson-diagram";
+import { LessonCards } from "@/components/docs/lesson-cards";
 import type { DocTarget } from "@/lib/framework/types";
 
 export const introduction = "先看懂浏览器发了什么、服务器回了什么。掌握这条往返路径后，下一章再准备编写接口的环境。";
@@ -46,8 +47,8 @@ export default function HttpRequestResponse() {
     </DocsSection>
 
     <DocsSection id="read-a-request" title="读懂一条请求">
-      <p>为了阅读消息，暂时约定示意服务器提供 <code>/hello</code>：它读取 <code>name</code> 并返回问候。下面按 HTTP/1.1 的文本形式展示一条请求。文件顶部的说明是教材注释，不是发送给服务器的 HTTP 字段。</p>
-      <LessonCode id="f01-request-message" source="f01-request" start={1} end={6} label="HTTP 请求 A · 示意" language="http" />
+      <p>为了阅读消息，暂时约定示意服务器提供 <code>/hello</code>：它读取 <code>name</code> 并返回问候。下面按 HTTP/1.1 的文本形式展示一条请求示意，尚未发送。</p>
+      <LessonCode id="f01-request-message" source="f01-request" start={3} end={6} label="HTTP 请求 A · 示意" language="http" highlightLines={[3]} />
       <p>请求的第一行称为<strong>请求行</strong>。<code>GET</code> 是<strong>方法</strong>，表示这次请求希望读取内容；后面是路径和查询部分；<code>HTTP/1.1</code> 表示此处使用的消息版本。</p>
       <p>接下来的 <code>名称: 值</code> 是<strong>请求头</strong>，用于附带说明。<code>Host</code> 指明目标主机和端口；<code>Accept: application/json</code> 表达客户端希望收到 JSON。这个希望是否满足，仍取决于服务器。</p>
       <p>请求头后面的一行空行把头部与<strong>正文</strong>分开。正文用来携带消息内容；本例的读取请求没有正文，名字放在查询参数里。以后提交表单或 JSON 时，正文会承担不同的数据输入。</p>
@@ -59,9 +60,13 @@ export default function HttpRequestResponse() {
 
     <DocsSection id="read-a-response" title="读懂一条响应">
       <p>现在阅读与这条请求配对的成功响应示意。它的头部和正文也由空行隔开：</p>
-      <LessonCode id="f01-response-message" source="f01-response" start={1} end={5} label="HTTP 响应 A · 示意" language="http" />
+      <LessonCode id="f01-response-message" source="f01-response" start={2} end={5} label="HTTP 响应 A · 示意" language="http" highlightLines={[2]} />
       <p>响应第一行称为<strong>状态行</strong>。<code>200</code> 是<strong>状态码</strong>，告诉客户端这次读取成功；<code>OK</code> 是该状态的简短说明。状态码可以先帮助你判断处理结果，正文再给出具体数据。</p>
       <p><code>Content-Type: application/json</code> 是<strong>响应头</strong>，说明正文采用 JSON 格式。它与请求中的 <code>Accept</code> 方向不同：前者说明实际返回了什么，后者表达客户端希望得到什么。</p>
+      <LessonCards label="两个头字段的方向" cards={[
+        {title:"Accept：客户端的期望",icon:"request",tone:"blue",description:<>请求中发送 <code>application/json</code>，表示希望收到 JSON；是否满足取决于接口约定。</>},
+        {title:"Content-Type：正文的格式",icon:"response",tone:"green",description:<>本例响应中写 <code>application/json</code>，说明实际返回的正文是 JSON。</>},
+      ]}/>
       <p><strong>JSON</strong> 是一种文本数据格式。本例的花括号表示对象，<code>"message"</code> 是字段名，冒号后是字段值。字段名和字符串使用双引号；JSON 也能表示数字、数组、<code>true</code>、<code>false</code> 和 <code>null</code>。</p>
       <p>Python 里的字典也用花括号，但它是程序中的数据结构。JSON 是消息正文里的文本格式。两者可以转换，不能因为外观相似就当成同一种东西。</p>
       <DocsCallout kind="tip" title="先状态，再数据">
@@ -71,9 +76,9 @@ export default function HttpRequestResponse() {
 
     <DocsSection id="change-one-condition" title="只改变一个条件">
       <p>先不要运行命令。保持主机和端口不变，把路径从 <code>/hello</code> 改成 <code>/missing</code>。假设服务器没有提供这个路径，你认为它还能返回正常问候吗？</p>
-      <LessonCode id="f01-missing-request" source="f01-request" start={8} end={12} label="HTTP 请求 B · 示意" language="http" />
+      <LessonCode id="f01-missing-request" source="f01-request" start={9} end={12} label="HTTP 请求 B · 示意" language="http" highlightLines={[9]} />
       <p>在下面的教材约定中，服务器能够接收请求，但找不到对应路径，于是返回 <code>404 Not Found</code>，正文说明没有找到。这是一条<strong>失败的 HTTP 响应</strong>，不是“没有服务器响应”。</p>
-      <LessonCode id="f01-missing-response" source="f01-response" start={8} end={12} label="HTTP 响应 B · 示意" language="http" />
+      <LessonCode id="f01-missing-response" source="f01-response" start={9} end={12} label="HTTP 响应 B · 示意" language="http" highlightLines={[9]} />
       <p>如果停止接收请求的进程，再访问同一地址，情况就不同了：客户端可能报告“连接被拒绝”或超时，根本收不到 HTTP 状态码。此时应先检查服务是否启动、主机和端口是否正确；路径问题则应在连接成功后检查。</p>
       <div className="docs-table-wrap"><table>
         <thead><tr><th scope="col">只改变这一项</th><th scope="col">预期观察</th><th scope="col">恢复方向</th></tr></thead>

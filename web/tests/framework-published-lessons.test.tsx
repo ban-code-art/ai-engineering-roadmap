@@ -60,3 +60,14 @@ test("HTTP highlighting retains the blank boundary between headers and an empty 
   assert.equal(sample.lines.length, sample.code.split("\n").length);
   assert.equal(sample.lines.at(-1)!.html, "");
 });
+
+test("lesson emphasis uses real source lines and does not alter copied code", async () => {
+  const original = await getSourceSample("f03-functions", {start:5,end:11});
+  const emphasized = await getSourceSample("f03-functions", {start:5,end:11,highlightLines:[5,7,10]});
+  assert.equal(emphasized.code, original.code);
+  assert.equal(emphasized.sourceHash, original.sourceHash);
+  assert.deepEqual(emphasized.highlightLines, [1,3,6]);
+  for (const lines of [[0],[12],[4],[5.5]]) {
+    await assert.rejects(getSourceSample("f03-functions",{start:5,end:11,highlightLines:lines}), /highlight|line/i);
+  }
+});

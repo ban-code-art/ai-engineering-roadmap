@@ -30,7 +30,7 @@ export default function PythonForApi() {
 
     <DocsSection id="define-and-call" title="定义函数，再调用它">
       <p>先在 <code>fastapi-study/python-basics/functions.py</code> 写入这个完整的小例子。它只做一件事：根据名字生成一句问候，并把返回结果显示在终端。</p>
-      <LessonCode id="f03-functions" source="f03-functions" label="functions.py" language="python" />
+      <LessonCode id="f03-functions" source="f03-functions" label="functions.py" language="python" highlightLines={[5,7,10]} />
       <p><code>=</code> 是<strong>赋值</strong>：先得到右边的值，再让左边的名称引用它。名称是变量；带引号的 <code>"Lin"</code> 是字符串，也就是一段文本。赋值不是数学里的相等判断。</p>
       <p><code>def</code> 开始<strong>定义函数</strong>。函数是一个有名称、可以被调用的小操作；括号里的 <code>name</code> 是它接收输入的参数。参数后的 <code>: str</code> 表示期望输入字符串，<code>-&gt; str</code> 表示期望返回字符串。这两处是类型提示，后面会单独验证它们的边界。</p>
       <p>定义行末尾的冒号引出<strong>函数体</strong>，下一行向右缩进四个空格，表示它属于这个函数。<code>return</code> 把结果交给调用者，并结束本次函数执行。<code>#</code> 后面是注释，给读代码的人解释原因，不参与执行。</p>
@@ -62,7 +62,7 @@ export default function PythonForApi() {
       <p>现在把“生成问候”放到一个专门文件，调用它的代码放到另一个文件。一份 <code>.py</code> 文件可以作为一个<strong>模块</strong>被其他文件导入。先在 <code>python-basics</code> 下保存 <code>messages.py</code>：</p>
       <LessonCode id="f03-messages" source="f03-messages" label="messages.py · 生成消息" language="python" />
       <p>再在<strong>同一个目录</strong>保存 <code>imports.py</code>。它只负责导入并调用，不复制另一份问候规则：</p>
-      <LessonCode id="f03-imports" source="f03-imports" label="imports.py · 调用入口" language="python" />
+      <LessonCode id="f03-imports" source="f03-imports" label="imports.py · 调用入口" language="python" highlightLines={[4,7]} />
       <p><code>from messages import make_message</code> 的意思是：从 <code>messages</code> 模块取得 <code>make_message</code> 这个名称。模块名不带 <code>.py</code>。运行 <code>imports.py</code> 时，Python 会寻找并加载同目录的 <code>messages.py</code>；这不是从网上下载一个包，不需要 <code>pip install messages</code>。</p>
       <p>先预测四行输出的顺序。为什么导入语句前后都会打印，而 <code>messages</code> 中的打印出现在它们之间？</p>
       <LessonCode id="f03-run-imports-windows" source="f03-windows" start={11} end={11} label="PowerShell · 项目根" language="powershell" />
@@ -78,7 +78,7 @@ export default function PythonForApi() {
     <DocsSection id="read-type-hints" title="类型提示会做什么">
       <p>类型提示帮助编辑器和检查工具理解“希望收到什么”。常见的 <code>str</code> 表示字符串，<code>int</code> 表示整数。<code>value: int</code> 不是默认值，<code>value = 3</code> 才是赋值；冒号和等号承担不同职责。</p>
       <p>但普通 Python 函数的直接调用，不会因为写了 <code>: int</code> 就自动验证或转换输入。用一个只原样返回输入的函数来观察。在同一目录新增 <code>annotations.py</code>：</p>
-      <LessonCode id="f03-annotations" source="f03-annotations" label="annotations.py" language="python" />
+      <LessonCode id="f03-annotations" source="f03-annotations" label="annotations.py" language="python" highlightLines={[7]} />
       <LessonCode id="f03-run-annotations-windows" source="f03-windows" start={14} end={14} label="PowerShell · 项目根" language="powershell" />
       <DocsAccordion title="macOS / Linux：运行 annotations.py"><LessonCode id="f03-run-annotations-posix" source="f03-posix" start={9} end={9} label="终端 · 项目根" language="bash" /></DocsAccordion>
       <p>先预测第二次调用：会抛出类型验证错误，还是显示 <code>three</code>？保存并运行后，应依次显示 <code>3</code> 和 <code>three</code>。原因是函数体原样返回传入值，普通调用没有自动验证步骤。</p>

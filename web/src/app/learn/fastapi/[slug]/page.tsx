@@ -10,6 +10,7 @@ import PythonForApi, * as python from "@/content/fastapi/chapters/python-for-api
 import { materializeLesson } from "@/lib/course/materialize";
 import { exportDocumentText } from "@/lib/framework/document-export";
 import { getSourceLinks } from "@/lib/course/sources";
+import { LessonCards } from "@/components/docs/lesson-cards";
 
 const lessons = {
   "http-request-response": { render: HttpRequestResponse, ...http },
@@ -43,13 +44,15 @@ export default async function ChapterPage({ params }: { params: Promise<{ slug: 
     {body}
     <DocsSection id="source-and-next" title="源码与下一步">
       <p><a href={source.tree} target="_blank" rel="noreferrer">本章完整源码 ↗</a> · <a href={source.file} target="_blank" rel="noreferrer">当前文件 ↗</a></p>
-      <p>各代码框均标明对应文件和行号。回到本章固定版本，可以恢复练习起点；图中的流程是帮助理解机制的示意。</p>
+      <p>代码框后提供固定源码链接，展开“版本与来源”可核对文件和行号。回到本章固定版本，可以恢复练习起点；图中的流程是帮助理解机制的示意。</p>
       <p className="docs-caption">学习组织参考 <a href="https://docs.langchain.com/oss/python/langchain/quickstart" target="_blank" rel="noreferrer">LangChain 文档</a>及其<a href="https://github.com/langchain-ai/docs" target="_blank" rel="noreferrer">官方仓库</a>；接口知识依据 <a href="https://fastapi.tiangolo.com/tutorial/" target="_blank" rel="noreferrer">FastAPI 官方教程</a>。</p>
       {!next && <p>本批到这里结束。下一批将创建第一个 FastAPI 应用，并运行真正的 HTTP 请求。</p>}
     </DocsSection>
-    <nav className="docs-lesson-pagination" aria-label="章节翻页">
-      <Link href={previous ? chapterHref(previous.slug) : "/learn"}><span>← 上一页</span><strong>{previous?.title ?? "课程概览"}</strong></Link>
-      {next && <Link href={chapterHref(next.slug)}><span>下一章 →</span><strong>{next.title}</strong></Link>}
+    <nav aria-label="章节翻页">
+      <LessonCards label="继续学习" cards={[
+        {title:previous?.title??"课程概览",description:previous?"返回上一章，核对需要的前置知识。":"查看本课已发布章节与后续路线。",href:previous?chapterHref(previous.slug):"/learn",icon:"layers",tone:"blue"},
+        ...(next?[{title:next.title,description:next.summary,href:chapterHref(next.slug),icon:"route" as const,tone:"green" as const}]:[]),
+      ]}/>
     </nav>
   </DocsShell>;
 }

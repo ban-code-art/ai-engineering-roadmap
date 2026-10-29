@@ -47,7 +47,7 @@ async function loadPrimitives() {
 }
 
 function activePanel(markup: string): string {
-  return markup.match(/<div\b[^>]*role="tabpanel"(?=[^>]*\btabindex="0")(?=[^>]*\baria-labelledby="[^"]+")[^>]*>([\s\S]*?)<\/div>/)?.[1] ?? "";
+  return markup.match(/<div\b[^>]*role="tabpanel"(?=[^>]*\btabindex="0")(?=[^>]*\baria-(?:labelledby|label)="[^"]+")[^>]*>([\s\S]*?)<\/div>/)?.[1] ?? "";
 }
 
 test("server-rendered code selects the requested sample and keeps every alternate available without JavaScript", async () => {

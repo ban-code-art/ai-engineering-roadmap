@@ -1,0 +1,340 @@
+{
+  "verified_at": "2026-10-29T11:49:25.450243+00:00",
+  "scope": "read-only repository and HTTP-rendered HTML review; no browser UI control and no tutorial source changes",
+  "repository": "https://github.com/langchain-ai/docs",
+  "reference_commit": "ace09e0592332092f2b9c47496632793a4a485cc",
+  "repository_sources": [
+    {
+      "path": "src/oss/langchain/short-term-memory.mdx",
+      "url": "https://raw.githubusercontent.com/langchain-ai/docs/ace09e0592332092f2b9c47496632793a4a485cc/src/oss/langchain/short-term-memory.mdx",
+      "status": 200,
+      "sha256": "e9cbb60ddca804b5c6b13189893fdf15c6d31b2f11147c6e4588e0879b4b3118",
+      "bytes": 36526
+    },
+    {
+      "path": "src/style.css",
+      "url": "https://raw.githubusercontent.com/langchain-ai/docs/ace09e0592332092f2b9c47496632793a4a485cc/src/style.css",
+      "status": 200,
+      "sha256": "4fcab277a991e34392debeb73642391880167162d6d0018a08f005235b02783c",
+      "bytes": 33668
+    },
+    {
+      "path": "src/docs.json",
+      "url": "https://raw.githubusercontent.com/langchain-ai/docs/ace09e0592332092f2b9c47496632793a4a485cc/src/docs.json",
+      "status": 200,
+      "sha256": "7c4b1aed89607658fceaaede2d472fa27cd066b722749a7810a2e3c638543eba",
+      "bytes": 230959
+    }
+  ],
+  "live_page": {
+    "url": "https://docs.langchain.com/oss/python/langchain/short-term-memory",
+    "status": 200,
+    "sha256": "fb0f19cb2d551a0b3c69f936e4eede288e08c58a1ed7367f51a8ac4da1c9b1e8",
+    "bytes": 1117370,
+    "title": "Short-term memory - Docs by LangChain",
+    "deployment_commit": "unverified; no claim that hosted deployment equals reference_commit"
+  },
+  "official_configuration": {
+    "theme": "aspen",
+    "colors": {
+      "primary": "#161F34",
+      "light": "#7FC8FF",
+      "dark": "#006DDD"
+    },
+    "background": {
+      "color": {
+        "light": "#FFFFFF",
+        "dark": "#030710"
+      }
+    },
+    "codeblocks": {
+      "theme": {
+        "light": "catppuccin-latte",
+        "dark": "catppuccin-mocha"
+      }
+    }
+  },
+  "findings": [
+    {
+      "id": "standalone-code",
+      "evidence": [
+        {
+          "line": 111,
+          "text": "```python"
+        },
+        {
+          "line": 112,
+          "text": "from langchain.agents import create_agent, AgentState"
+        },
+        {
+          "line": 113,
+          "text": "from langgraph.checkpoint.memory import InMemorySaver"
+        },
+        {
+          "line": 114,
+          "text": ""
+        },
+        {
+          "line": 115,
+          "text": ""
+        },
+        {
+          "line": 116,
+          "text": "class CustomAgentState(AgentState):  # [!code highlight]"
+        },
+        {
+          "line": 117,
+          "text": "    user_id: str  # [!code highlight]"
+        },
+        {
+          "line": 118,
+          "text": "    preferences: dict  # [!code highlight]"
+        }
+      ],
+      "meaning": "Ordinary Python fence has no filename/version title. Code body contains executable code and real comments. Source checksum/checkpoint UI is not part of this block."
+    },
+    {
+      "id": "focused-line-highlight",
+      "evidence": [
+        {
+          "line": 120,
+          "text": "agent = create_agent("
+        },
+        {
+          "line": 121,
+          "text": "    \"gpt-5.5\","
+        },
+        {
+          "line": 122,
+          "text": "    tools=[get_user_info],"
+        },
+        {
+          "line": 123,
+          "text": "    state_schema=CustomAgentState,  # [!code highlight]"
+        },
+        {
+          "line": 124,
+          "text": "    checkpointer=InMemorySaver(),"
+        },
+        {
+          "line": 125,
+          "text": ")"
+        },
+        {
+          "line": 126,
+          "text": ""
+        },
+        {
+          "line": 127,
+          "text": "# Custom state can be passed in invoke"
+        },
+        {
+          "line": 128,
+          "text": "result = agent.invoke("
+        },
+        {
+          "line": 129,
+          "text": "    {"
+        },
+        {
+          "line": 130,
+          "text": "        \"messages\": [{\"role\": \"user\", \"content\": \"Hello\"}],"
+        },
+        {
+          "line": 131,
+          "text": "        \"user_id\": \"user_123\",  # [!code highlight]"
+        },
+        {
+          "line": 132,
+          "text": "        \"preferences\": {\"theme\": \"dark\"}  # [!code highlight]"
+        },
+        {
+          "line": 133,
+          "text": "    },"
+        },
+        {
+          "line": 134,
+          "text": "    {\"configurable\": {\"thread_id\": \"1\"}})"
+        }
+      ],
+      "meaning": "Only custom state class, state_schema argument and custom input fields are marked with # [!code highlight]. Hosted HTML emits span.line.line-highlight and removes the directive from displayed text."
+    },
+    {
+      "id": "pattern-card-group",
+      "evidence": [
+        {
+          "line": 173,
+          "text": "## Common patterns"
+        },
+        {
+          "line": 174,
+          "text": ""
+        },
+        {
+          "line": 175,
+          "text": "With [short-term memory](#usage) enabled, long conversations can exceed the LLM's context window. Common solutions are:"
+        },
+        {
+          "line": 176,
+          "text": ""
+        },
+        {
+          "line": 177,
+          "text": "<CardGroup cols={2}>"
+        },
+        {
+          "line": 178,
+          "text": "    <Card title=\"Trim messages\" icon=\"scissors\" href=\"#trim-messages\" arrow>"
+        },
+        {
+          "line": 179,
+          "text": "        Remove first or last N messages (before calling LLM)"
+        },
+        {
+          "line": 180,
+          "text": "    </Card>"
+        },
+        {
+          "line": 181,
+          "text": "    <Card title=\"Delete messages\" icon=\"trash\" href=\"#delete-messages\" arrow>"
+        },
+        {
+          "line": 182,
+          "text": "        Delete messages from LangGraph state permanently"
+        },
+        {
+          "line": 183,
+          "text": "    </Card>"
+        },
+        {
+          "line": 184,
+          "text": "    <Card title=\"Summarize messages\" icon=\"stack-2\" href=\"#summarize-messages\" arrow>"
+        },
+        {
+          "line": 185,
+          "text": "        Summarize earlier messages in the history and replace them with a summary"
+        },
+        {
+          "line": 186,
+          "text": "    </Card>"
+        },
+        {
+          "line": 187,
+          "text": "    <Card title=\"Custom strategies\" icon=\"adjustments\">"
+        },
+        {
+          "line": 188,
+          "text": "        Custom strategies (e.g., message filtering, etc.)"
+        },
+        {
+          "line": 189,
+          "text": "    </Card>"
+        },
+        {
+          "line": 190,
+          "text": "</CardGroup>"
+        }
+      ],
+      "meaning": "Two-column cards summarize four related choices. Three have local anchor links and arrow; the fourth is informational. Detailed explanations follow below."
+    },
+    {
+      "id": "surface-and-card-color",
+      "evidence": [
+        {
+          "line": 750,
+          "text": ".card {"
+        },
+        {
+          "line": 751,
+          "text": "  background-color: transparent !important;"
+        },
+        {
+          "line": 752,
+          "text": "}"
+        },
+        {
+          "line": 753,
+          "text": ""
+        },
+        {
+          "line": 754,
+          "text": "/* Tip-styled cards — match Tip callout (lime #d4e8a8 / olive #8da042) */"
+        },
+        {
+          "line": 755,
+          "text": ".card.card-tip,"
+        },
+        {
+          "line": 756,
+          "text": "[data-component=\"card\"].card-tip {"
+        },
+        {
+          "line": 757,
+          "text": "  background-color: #d4e8a8 !important;"
+        },
+        {
+          "line": 758,
+          "text": "  border-color: #8da042 !important;"
+        },
+        {
+          "line": 798,
+          "text": "/* Make card and dropdown borders visible in dark mode (WCAG 1.4.11: 3:1 min for UI components) */"
+        },
+        {
+          "line": 799,
+          "text": ".dark .card:not(.card-tip),"
+        },
+        {
+          "line": 800,
+          "text": ".dark [data-component=\"card\"]:not(.card-tip) {"
+        },
+        {
+          "line": 801,
+          "text": "  border-color: #4f5d73 !important;"
+        },
+        {
+          "line": 802,
+          "text": "}"
+        }
+      ],
+      "meaning": "Normal cards are transparent; optional semantic tip cards get lime color. Dark cards use a visible #4f5d73 border. Color is assigned to component purpose, not every paragraph."
+    },
+    {
+      "id": "hosted-code-html",
+      "evidence": {
+        "pre_style": "background-color:#eff1f5;--shiki-dark-bg:#1e1e2e;color:#4c4f69;--shiki-dark:#cdd6f4",
+        "pre_class": "shiki shiki-themes catppuccin-latte catppuccin-mocha has-highlighted",
+        "scroll_viewport_class": "py-3.5 px-4; overflow scroll",
+        "custom_state_root_class": "rounded-2xl",
+        "line_class": "line line-highlight",
+        "code_text_contains_source_checksum": false
+      },
+      "meaning": "Hosted code uses a cool pale neutral surface, narrow local scrolling, syntax color and targeted lines. No W01/checkpoint/hash text is in the code body."
+    }
+  ],
+  "project_adaptations": [
+    "Move filename/version/source details and source links outside the pure code surface. Keep a small copy control; keep platform/version tabs only when there is an actual choice, above the surface.",
+    "Use the official #eff1f5 code surface as reference. A softer blue-gray whole-page reading background is a user-requested local adaptation, not an official accessibility or eye-fatigue claim.",
+    "Add a small F01 request Accept versus response Content-Type comparison, linked to their existing subsections. Keep narrative explanation and source code contiguous.",
+    "Use cards for published chapter navigation or F03 definition/import/call concept navigation. Avoid enclosing all prose in cards and avoid fake arrows on nonlinks.",
+    "Highlight the one mechanism currently explained: F01 request/status/header lines; F03 def/return versus explicit call and import. Do not highlight all lines or encode teaching completeness through color."
+  ],
+  "contrast_audit": {
+    "method": "WCAG relative luminance contrast from official hex colors; not browser-computed contrast",
+    "background": "#eff1f5",
+    "ratios": {
+      "#4c4f69": 7.06,
+      "#8839ef": 4.79,
+      "#40a02b": 2.96,
+      "#1e66f5": 4.34,
+      "#fe640b": 2.64,
+      "#6c6f85": 4.37
+    },
+    "recommendation": "Body and code text should be checked at 4.5:1. Darken low-contrast light-theme tokens within the same hue if needed, especially against blue highlighted rows; preserve source text and dark-theme palette."
+  },
+  "limitations": [
+    "No pixel-exact card dimensions or highlighted-row RGB measured from this HTTP review. User screenshots supply the visual reference.",
+    "Hosted snippet models and imports can change independently of pinned repository source.",
+    "The original Python source checkpoint remains unchanged; display metadata may change without altering example code."
+  ]
+}

@@ -28,5 +28,7 @@ export interface CodeSample {
   sourceHash?: string;
   checkpoint?: string;
   sourceUrl?: string;
+  /** One-based positions within this displayed excerpt; source text stays unchanged. */
+  highlightLines?: number[];
 }
 export const PREVIEW_PATH = "/framework-preview";

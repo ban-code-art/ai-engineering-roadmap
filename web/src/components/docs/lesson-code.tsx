@@ -9,6 +9,8 @@ export interface LessonCodeProps {
   label?: string;
   language?: string;
   title?: string;
+  /** Absolute line numbers in the pinned source file. */
+  highlightLines?: number[];
 }
 
 /** Small excerpts and full recovery files share the same published source. */

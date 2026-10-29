@@ -18,7 +18,7 @@ function SampleCode({ sample }: { sample: CodeSample }) {
       <code className="docs-code">
         {sample.lines.length ? sample.lines.map((line, index) => (
           <Fragment key={`${index}-${line.number}`}>
-            <span className="docs-code-line" dangerouslySetInnerHTML={{ __html: line.html }} />
+            <span className="docs-code-line" data-highlighted={sample.highlightLines?.includes(index + 1) || undefined} dangerouslySetInnerHTML={{ __html: line.html }} />
             {lineEndings[index] ?? ""}
           </Fragment>
         )) : sample.code}
@@ -31,7 +31,7 @@ function SourceDetails({ sample }: { sample: CodeSample }) {
   if (!sample.sourcePath && !sample.sourceHash && !sample.checkpoint) return null;
   return (
     <details className="docs-source-details">
-      <summary>源码信息</summary>
+      <summary>版本与来源</summary>
       <dl className="docs-source-meta">
         {sample.sourcePath && <><dt>来源</dt><dd><code>{sample.sourcePath}</code></dd></>}
         {sample.sourceHash && <><dt>SHA-256</dt><dd><code>{sample.sourceHash}</code></dd></>}
@@ -39,6 +39,14 @@ function SourceDetails({ sample }: { sample: CodeSample }) {
       </dl>
     </details>
   );
+}
+
+function SourceReference({ sample }: { sample: CodeSample }) {
+  if (!sample.sourceUrl && !sample.sourcePath && !sample.sourceHash && !sample.checkpoint) return null;
+  return <div className="docs-code-reference">
+    {sample.sourceUrl && <a className="docs-code-source-link" href={sample.sourceUrl} target="_blank" rel="noreferrer">查看源码 ↗</a>}
+    <SourceDetails sample={sample} />
+  </div>;
 }
 
 export function CodeGroup({ id, samples, title, defaultSampleId }: CodeGroupProps) {
@@ -51,7 +59,7 @@ export function CodeGroup({ id, samples, title, defaultSampleId }: CodeGroupProp
   useEffect(() => setEnhanced(true), []);
 
   if (!selectedSample) {
-    return <div id={id} className="docs-code-group"><p className="docs-code-empty">暂无代码</p></div>;
+    return <div id={id} className="docs-code-example"><p className="docs-code-empty">暂无代码</p></div>;
   }
 
   function handleTabKey(event: KeyboardEvent<HTMLButtonElement>, index: number) {
@@ -71,20 +79,8 @@ export function CodeGroup({ id, samples, title, defaultSampleId }: CodeGroupProp
   }
 
   return (
-    <div id={id} className="docs-code-group" data-enhanced={enhanced} data-active-sample={selectedSample.id}>
-      <div className="docs-code-header">
-        <div className="docs-code-heading">
-          {(title || selectedSample.sourcePath) && <p className="docs-code-title">{title ?? selectedSample.sourcePath}</p>}
-          {selectedSample.checkpoint && (
-            <p className="docs-code-meta">
-              {selectedSample.checkpoint && <span>{selectedSample.checkpoint}</span>}
-            </p>
-          )}
-        </div>
-        {selectedSample.sourceUrl && <a className="docs-code-source-link" href={selectedSample.sourceUrl} target="_blank" rel="noreferrer">查看源码 ↗</a>}
-        <DocsCopyButton text={selectedSample.code} label="复制代码" iconOnly />
-      </div>
-      <div className="docs-code-tabs" role="tablist" aria-label={title ? `${title}版本` : "代码版本"} aria-orientation="horizontal">
+    <div id={id} className="docs-code-example" data-enhanced={enhanced} data-active-sample={selectedSample.id}>
+      {samples.length > 1 && <div className="docs-code-tabs" role="tablist" aria-label={title ? `${title}版本` : "代码版本"} aria-orientation="horizontal">
         {samples.map((sample, index) => (
           <button
             key={sample.id}
@@ -101,29 +97,33 @@ export function CodeGroup({ id, samples, title, defaultSampleId }: CodeGroupProp
             onKeyDown={(event) => handleTabKey(event, index)}
           >{sample.label}</button>
         ))}
+      </div>}
+      <div className="docs-code-group">
+        <div className="docs-code-copy"><DocsCopyButton text={selectedSample.code} label="复制代码" iconOnly /></div>
+        {samples.map((sample) => (
+          <div
+            key={sample.id}
+            id={`${id}-panel-${sample.id}`}
+            className="docs-code-panel"
+            role="tabpanel"
+            aria-labelledby={samples.length > 1 ? `${id}-tab-${sample.id}` : undefined}
+            aria-label={samples.length === 1 ? sample.label : undefined}
+            tabIndex={sample.id === selectedSample.id ? 0 : -1}
+            hidden={sample.id !== selectedSample.id}
+          >
+            <SampleCode sample={sample} />
+          </div>
+        ))}
       </div>
-      {samples.map((sample) => (
-        <div
-          key={sample.id}
-          id={`${id}-panel-${sample.id}`}
-          className="docs-code-panel"
-          role="tabpanel"
-          aria-labelledby={`${id}-tab-${sample.id}`}
-          tabIndex={sample.id === selectedSample.id ? 0 : -1}
-          hidden={sample.id !== selectedSample.id}
-        >
-          <SampleCode sample={sample} />
-          <SourceDetails sample={sample} />
-        </div>
-      ))}
+      <SourceReference sample={selectedSample} />
       {samples.length > 1 && (
         <details className="docs-code-fallback">
           <summary>查看其他版本</summary>
           {samples.filter((sample) => sample.id !== selectedSample.id).map((sample) => (
             <div className="docs-code-fallback-sample" key={sample.id}>
               <p className="docs-code-fallback-label">{sample.label}</p>
-              <SampleCode sample={sample} />
-              <SourceDetails sample={sample} />
+              <div className="docs-code-group"><SampleCode sample={sample} /></div>
+              <SourceReference sample={sample} />
             </div>
           ))}
         </details>

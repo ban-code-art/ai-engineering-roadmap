@@ -3,7 +3,7 @@
 ## Snapshot
 
 - Goal: 依据FA-CURRICULUM-1.0逐批写通俗、独立页面的FastAPI基础课，长期完成TaskBoard API demo。
-- Progress: W01/F01–F03已发布；源A739a064与tag固定，页面B f7f63dd已推送，CI40864156475的web/labs成功。23前端检查/9Python测试、Windows与Linux完整环境、构建/类型/路由、桌面手机/双主题通过。
+- Progress: W01已发布。最新展示改造完成：代码区纯代码/框后来源、局部重点行、蓝灰阅读面/少量对照与导航卡片，LC-DOCS-2.1；28前端检查/构建/类型/路由、桌面手机/双主题通过，待本次提交同步。源码A739a064和15文件hash继续固定，教学源未改。
 - Next: 本批结束；下次从W02/F04–F06首接口创建/启动/排错校准开始。
 
 ## Read First
@@ -26,7 +26,7 @@
 
 ## Last Interaction
 
-- 用户要求按目录正式写作，从简单到难、短代码/注释/包/美观图/独立章，不一次写全课，写完认真核查。
+- 用户最新要求清理代码框重复文件/版本/源码信息，代码优先；减少大片白色和单调，继续参考LangChain文档层次。改造证据见docs/evidence/verification/reading-refresh.md，后续写作使用2.1。
 
 ## Continue From
 

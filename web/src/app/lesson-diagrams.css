@@ -1,12 +1,12 @@
 .docs-lesson-diagram {
-  --docs-diagram-bg: #fafbf8;
-  --docs-diagram-node: var(--docs-bg);
+  --docs-diagram-bg: #edf3e9;
+  --docs-diagram-node: #f7faf4;
   --docs-diagram-ink: #263429;
   --docs-diagram-muted: #5c665e;
   --docs-diagram-line: #a6b1a4;
-  --docs-diagram-border: #dce3d8;
+  --docs-diagram-border: #cfdbc7;
   --docs-diagram-accent: #526f32;
-  --docs-diagram-accent-bg: #f0f5e7;
+  --docs-diagram-accent-bg: #e3edcf;
   --docs-diagram-accent-border: #b9cba0;
   container-type: inline-size;
   margin: 24px 0 32px;
