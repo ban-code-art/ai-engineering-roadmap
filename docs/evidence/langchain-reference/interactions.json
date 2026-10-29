@@ -1,0 +1,109 @@
+{
+  "scroll": {
+    "scrollY": 1749.3333740234375,
+    "header": {
+      "top": 0,
+      "height": 96
+    },
+    "sidebar": {
+      "top": 96,
+      "height": 904
+    },
+    "toc": [
+      {
+        "text": "Install dependencies",
+        "class": "",
+        "color": "rgb(80, 80, 81)",
+        "weight": "400"
+      },
+      {
+        "text": "Set up API keys",
+        "class": "",
+        "color": "rgb(80, 80, 81)",
+        "weight": "400"
+      },
+      {
+        "text": "Build a basic agent",
+        "class": "text-primary dark:text-primary-light",
+        "color": "rgb(22, 31, 52)",
+        "weight": "400"
+      },
+      {
+        "text": "Build a real-world agent",
+        "class": "",
+        "color": "rgb(80, 80, 81)",
+        "weight": "400"
+      },
+      {
+        "text": "Trace agent calls",
+        "class": "",
+        "color": "rgb(80, 80, 81)",
+        "weight": "400"
+      },
+      {
+        "text": "Next steps",
+        "class": "",
+        "color": "rgb(80, 80, 81)",
+        "weight": "400"
+      }
+    ],
+    "sections": [
+      "​Install dependencies",
+      "​Set up API keys",
+      "​Build a basic agent",
+      "​Build a real-world agent",
+      "​Trace agent calls",
+      "​Next steps"
+    ]
+  },
+  "codeTabs": {
+    "firstGroup": {
+      "tabs": [
+        {
+          "text": "uv",
+          "selected": "false",
+          "color": "rgb(112, 112, 113)",
+          "borderBottom": "0px solid rgb(238, 238, 239)",
+          "fontSize": "12px",
+          "padding": "0px"
+        },
+        {
+          "text": "pip",
+          "selected": "true",
+          "color": "rgb(22, 31, 52)",
+          "borderBottom": "0px solid rgb(238, 238, 239)",
+          "fontSize": "12px",
+          "padding": "0px"
+        },
+        {
+          "text": "venv",
+          "selected": "false",
+          "color": "rgb(112, 112, 113)",
+          "borderBottom": "0px solid rgb(238, 238, 239)",
+          "fontSize": "12px",
+          "padding": "0px"
+        }
+      ],
+      "visibleCode": "# Install Python 3.11+ separately if needed.\npip install -U langchain"
+    },
+    "url": "https://docs.langchain.com/oss/python/langchain/quickstart",
+    "headingCount": 6
+  },
+  "searchModal": {
+    "dialog": {
+      "x": 392.3333435058594,
+      "y": 54,
+      "width": 640,
+      "height": 62,
+      "background": "rgb(255, 255, 255)",
+      "radius": "20px",
+      "border": "0px solid rgb(238, 238, 239)",
+      "padding": "0px"
+    },
+    "input": {
+      "fontSize": "16px",
+      "height": 36.66666793823242
+    },
+    "activeElement": "INPUT"
+  }
+}

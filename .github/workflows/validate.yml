@@ -1,0 +1,34 @@
+name: Validate shared documentation framework
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  web:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: web
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .node-version
+          cache: npm
+          cache-dependency-path: web/package-lock.json
+      - run: npm ci
+      - run: npm run check:platform
+      - run: npm run build
+      - run: npm run typecheck
+      - name: Check public routes and absence of retired tutorials
+        run: |
+          npm start > /tmp/roadmap-web.log 2>&1 &
+          server_pid=$!
+          trap 'kill "$server_pid" || true' EXIT
+          node scripts/verify-site.mjs
+      - run: npm run build:framework

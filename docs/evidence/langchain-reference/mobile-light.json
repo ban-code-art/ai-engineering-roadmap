@@ -1,0 +1,137 @@
+{
+  "width": 390,
+  "height": 844,
+  "scrollWidth": 390,
+  "elements": [
+    {
+      "selector": "#navbar",
+      "display": "block",
+      "position": "fixed",
+      "fontSize": "16px",
+      "lineHeight": "24px",
+      "padding": "0px",
+      "width": 390,
+      "x": 0,
+      "y": 0,
+      "height": 112
+    },
+    {
+      "selector": "#sidebar-content",
+      "display": "none",
+      "position": "sticky",
+      "fontSize": "16px",
+      "lineHeight": "24px",
+      "padding": "0px",
+      "width": 0,
+      "x": 0,
+      "y": 0,
+      "height": 0
+    },
+    {
+      "selector": "#content-container",
+      "display": "flex",
+      "position": "static",
+      "fontSize": "16px",
+      "lineHeight": "24px",
+      "padding": "144px 20px 0px",
+      "width": 390,
+      "x": 0,
+      "y": 0,
+      "height": 12916.771484375
+    },
+    {
+      "selector": "#content-area",
+      "display": "block",
+      "position": "static",
+      "fontSize": "16px",
+      "lineHeight": "24px",
+      "padding": "0px",
+      "width": 350,
+      "x": 20,
+      "y": 144,
+      "height": 12772.771484375
+    },
+    {
+      "selector": "#content-side-layout",
+      "display": "none",
+      "position": "sticky",
+      "fontSize": "16px",
+      "lineHeight": "24px",
+      "padding": "0px",
+      "width": 0,
+      "x": 0,
+      "y": 0,
+      "height": 0
+    },
+    {
+      "selector": "#table-of-contents",
+      "display": "block",
+      "position": "relative",
+      "fontSize": "14px",
+      "lineHeight": "24px",
+      "padding": "0px",
+      "width": 0,
+      "x": 0,
+      "y": 0,
+      "height": 0
+    },
+    {
+      "selector": "h1",
+      "display": "block",
+      "position": "static",
+      "fontSize": "30px",
+      "lineHeight": "36px",
+      "padding": "0px",
+      "width": 140.03125,
+      "x": 20,
+      "y": 176,
+      "height": 36
+    },
+    {
+      "selector": "#search-bar-entry",
+      "display": "flex",
+      "position": "static",
+      "fontSize": "14px",
+      "lineHeight": "24px",
+      "padding": "0px 12px 0px 14px",
+      "width": 0,
+      "x": 0,
+      "y": 0,
+      "height": 0
+    },
+    {
+      "selector": "#search-bar-entry-mobile",
+      "display": "flex",
+      "position": "static",
+      "fontSize": "16px",
+      "lineHeight": "24px",
+      "padding": "0px",
+      "width": 32,
+      "x": 310,
+      "y": 12,
+      "height": 32
+    }
+  ],
+  "visibleButtons": [
+    {
+      "text": "Search...",
+      "label": "Open search",
+      "classes": "text-gray-500 w-8 h-8 flex items-center justify-center hover:text-gray-600 dark:text-gray-400 dark:hover:text-gray-300"
+    },
+    {
+      "text": "",
+      "label": "More actions",
+      "classes": "h-7 w-5 flex items-center justify-center relative after:content-[''] after:absolute after:-inset-y-2 after:-left-1 after:-right-4"
+    },
+    {
+      "text": "NavigationGet startedQuickstart",
+      "label": null,
+      "classes": "flex items-center h-14 py-4 px-5 lg:hidden focus:outline-0 w-full text-left"
+    },
+    {
+      "text": "",
+      "label": "Close Chat LangChain",
+      "classes": ""
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "desktop1024": {
+    "width": 1024,
+    "headerHeight": 96,
+    "sidebarDisplay": "flex",
+    "tocDisplay": "none",
+    "contentX": 396,
+    "contentWidth": 552.6666870117188
+  },
+  "desktop1280": {
+    "width": 1280,
+    "sidebarDisplay": "flex",
+    "tocDisplay": "flex",
+    "contentX": 396,
+    "contentWidth": 456.66668701171875
+  },
+  "mobileNavigation": {
+    "found": true,
+    "width": 379.5,
+    "height": 844,
+    "x": -80.41799926757812,
+    "y": 0,
+    "classes": "[--bleed:3rem] relative outline-none bg-background-light dark:bg-background-dark overscroll-contain touch-auto will-change-transform transition-transform duration-450 ease-[cubic-bezier(0.32,0.72,0,1)] data-swiping:select-none data-ending-style:duration-[calc(var(--drawer-swipe-strength)*400ms)] motion-reduce:transition-none -ml-(--bleed) h-full transform-[translateX(var(--drawer-swipe-movement-x))] data-starting-style:transform-[translateX(calc(-100%+var(--bleed)-2px))] data-ending-style:transform-[translateX(calc(-100%+var(--bleed)-2px))] group/mobile-nav flex flex-col w-[calc(85dvw+var(--bleed))] min-w-[calc(19rem+var(--bleed))] max-w-[calc(22rem+var(--bleed))]",
+    "modal": null,
+    "cssWidth": "379.5px",
+    "maxWidth": "400px",
+    "transform": "matrix(1, 0, 0, 1, -32.418, 0)",
+    "bodyOverflow": "visible",
+    "text": "Docs by LangChain home pageBuildLangChainPythonOverviewGet startedInstallQuickstartChangelogPhilosophyCore componentsAgentsModelsMessagesToolsShort-term memoryEvent strea"
+  },
+  "scope": "Observed responsive states; navigation bounding box may be during its entry transition"
+}

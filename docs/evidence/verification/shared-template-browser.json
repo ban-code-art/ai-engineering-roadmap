@@ -1,0 +1,30 @@
+{
+  "date": "2026-10-29",
+  "status": "pass",
+  "checks": [
+    {
+      "h1": "基础教程",
+      "header": 96,
+      "path": "/learn",
+      "scrollWidth": 1425,
+      "template": "learn",
+      "width": 1440
+    },
+    {
+      "h1": "项目实践",
+      "header": 96,
+      "path": "/project",
+      "scrollWidth": 1425,
+      "template": "project",
+      "width": 1440
+    },
+    {
+      "header": 112,
+      "path": "/project",
+      "scrollWidth": 375,
+      "template": "project",
+      "width": 390
+    }
+  ],
+  "scope": "New blank section entry pages share the same template; tutorial content not written"
+}

@@ -1,0 +1,17 @@
+{
+  "name": "ai-engineering-roadmap",
+  "private": true,
+  "type": "module",
+  "engines": {"node": ">=24 <27"},
+  "scripts": {
+    "setup": "npm --prefix web ci",
+    "dev": "npm --prefix web run dev",
+    "build": "npm --prefix web run build",
+    "start": "npm --prefix web start",
+    "test": "npm --prefix web run test:framework",
+    "typecheck": "npm --prefix web run typecheck",
+    "dev:framework": "npm --prefix web run dev:framework",
+    "build:framework": "npm --prefix web run build:framework",
+    "start:framework": "npm --prefix web run start:framework"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "date": "2026-10-29",
+  "status": "pass",
+  "scope": "clean initial upload",
+  "candidateFiles": 188,
+  "bytes": 5887778,
+  "documentationLinks": 19,
+  "retiredMaterialExcluded": true,
+  "sharedSectionTemplate": true,
+  "credentialPatternsFound": 0,
+  "localPersonalPathsFound": 0,
+  "directPinsMatchLock": true,
+  "repository": "https://github.com/ban-code-art/ai-engineering-roadmap",
+  "limits": [
+    "Tutorials are intentionally not written",
+    "Heading uses open Manrope substitute",
+    "No public site deployment performed"
+  ]
+}

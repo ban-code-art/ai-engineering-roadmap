@@ -1,0 +1,254 @@
+{
+  "date": "2026-10-29",
+  "scope": "design-review extra observations",
+  "agents": {
+    "url": "https://docs.langchain.com/oss/python/langchain/agents",
+    "h3": [
+      {
+        "tag": "H3",
+        "text": "​Model",
+        "styles": {
+          "fontFamily": "\"TWK Lausanne\", sans-serif",
+          "fontSize": "20px",
+          "fontWeight": "600",
+          "lineHeight": "28px",
+          "letterSpacing": "-0.5px",
+          "padding": "0px",
+          "margin": "32px 0px 14px",
+          "color": "rgb(3, 7, 16)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderColor": "rgb(238, 238, 239)",
+          "borderRadius": "0px"
+        }
+      },
+      {
+        "tag": "H3",
+        "text": "​Tools",
+        "styles": {
+          "fontFamily": "\"TWK Lausanne\", sans-serif",
+          "fontSize": "20px",
+          "fontWeight": "600",
+          "lineHeight": "28px",
+          "letterSpacing": "-0.5px",
+          "padding": "0px",
+          "margin": "32px 0px 14px",
+          "color": "rgb(3, 7, 16)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderColor": "rgb(238, 238, 239)",
+          "borderRadius": "0px"
+        }
+      },
+      {
+        "tag": "H3",
+        "text": "​System prompt",
+        "styles": {
+          "fontFamily": "\"TWK Lausanne\", sans-serif",
+          "fontSize": "20px",
+          "fontWeight": "600",
+          "lineHeight": "28px",
+          "letterSpacing": "-0.5px",
+          "padding": "0px",
+          "margin": "32px 0px 14px",
+          "color": "rgb(3, 7, 16)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderColor": "rgb(238, 238, 239)",
+          "borderRadius": "0px"
+        }
+      }
+    ],
+    "table": [
+      {
+        "tag": "TH",
+        "text": "Field",
+        "styles": {
+          "fontFamily": "Inter, sans-serif",
+          "fontSize": "14px",
+          "fontWeight": "400",
+          "lineHeight": "21px",
+          "letterSpacing": "normal",
+          "padding": "0px 8.00001px 8.00001px 0px",
+          "margin": "0px",
+          "color": "oklch(0.21 0.034 264.665)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderColor": "rgb(238, 238, 239)",
+          "borderRadius": "0px"
+        }
+      },
+      {
+        "tag": "TH",
+        "text": "Type",
+        "styles": {
+          "fontFamily": "Inter, sans-serif",
+          "fontSize": "14px",
+          "fontWeight": "400",
+          "lineHeight": "21px",
+          "letterSpacing": "normal",
+          "padding": "0px 8.00001px 8.00001px",
+          "margin": "0px",
+          "color": "oklch(0.21 0.034 264.665)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderColor": "rgb(238, 238, 239)",
+          "borderRadius": "0px"
+        }
+      },
+      {
+        "tag": "TH",
+        "text": "Description",
+        "styles": {
+          "fontFamily": "Inter, sans-serif",
+          "fontSize": "14px",
+          "fontWeight": "400",
+          "lineHeight": "21px",
+          "letterSpacing": "normal",
+          "padding": "0px 0px 8.00001px 8.00001px",
+          "margin": "0px",
+          "color": "oklch(0.21 0.034 264.665)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderColor": "rgb(238, 238, 239)",
+          "borderRadius": "0px"
+        }
+      },
+      {
+        "tag": "TD",
+        "text": "messages",
+        "styles": {
+          "fontFamily": "Inter, sans-serif",
+          "fontSize": "14px",
+          "fontWeight": "400",
+          "lineHeight": "21px",
+          "letterSpacing": "normal",
+          "padding": "8.00001px 8.00001px 8.00001px 0px",
+          "margin": "0px",
+          "color": "rgb(3, 7, 16)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderColor": "rgb(238, 238, 239)",
+          "borderRadius": "0px"
+        }
+      }
+    ],
+    "link": [
+      {
+        "tag": "A",
+        "text": "create_agent",
+        "styles": {
+          "fontFamily": "Inter, sans-serif",
+          "fontSize": "16px",
+          "fontWeight": "400",
+          "lineHeight": "28px",
+          "letterSpacing": "normal",
+          "padding": "0px",
+          "margin": "0px",
+          "color": "oklch(0.21 0.034 264.665)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderColor": "rgb(238, 238, 239) rgb(238, 238, 239) rgb(22, 31, 52)",
+          "borderRadius": "0px"
+        },
+        "underline": "none",
+        "offset": "auto"
+      },
+      {
+        "tag": "A",
+        "text": "middleware",
+        "styles": {
+          "fontFamily": "Inter, sans-serif",
+          "fontSize": "16px",
+          "fontWeight": "400",
+          "lineHeight": "28px",
+          "letterSpacing": "normal",
+          "padding": "0px",
+          "margin": "0px",
+          "color": "oklch(0.21 0.034 264.665)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderColor": "rgb(238, 238, 239) rgb(238, 238, 239) rgb(22, 31, 52)",
+          "borderRadius": "0px"
+        },
+        "underline": "none",
+        "offset": "auto"
+      }
+    ],
+    "footer": {
+      "tag": "FOOTER",
+      "text": "Docs by LangChain home pagegithubxlinkedinyoutubeResourcesForumCh",
+      "styles": {
+        "fontFamily": "Inter, sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "lineHeight": "24px",
+        "letterSpacing": "normal",
+        "padding": "0px",
+        "margin": "0px",
+        "color": "rgb(112, 112, 113)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "borderColor": "rgb(238, 238, 239)",
+        "borderRadius": "0px"
+      }
+    }
+  },
+  "dark": {
+    "toc": [
+      {
+        "text": "Install dependencies",
+        "color": "rgb(127, 200, 255)",
+        "weight": "400",
+        "class": "text-primary dark:text-primary-light"
+      },
+      {
+        "text": "Set up API keys",
+        "color": "rgb(159, 159, 160)",
+        "weight": "400",
+        "class": ""
+      },
+      {
+        "text": "Build a basic agent",
+        "color": "rgb(159, 159, 160)",
+        "weight": "400",
+        "class": ""
+      }
+    ],
+    "inline": [
+      {
+        "text": ".env",
+        "color": "rgb(223, 223, 224)",
+        "background": "rgb(22, 31, 52)",
+        "lineHeight": "21px"
+      },
+      {
+        "text": ".env",
+        "color": "rgb(223, 223, 224)",
+        "background": "rgb(22, 31, 52)",
+        "lineHeight": "21px"
+      }
+    ],
+    "search": {
+      "background": "oklab(0.999994 0.0000455678 0.0000200868 / 0.03)",
+      "color": "oklab(0.999994 0.0000455678 0.0000200868 / 0.5)"
+    },
+    "footer": {
+      "color": "rgb(159, 159, 160)",
+      "fontSize": "16px"
+    }
+  },
+  "wide": {
+    "innerWidth": 1920,
+    "clientWidth": 1905,
+    "outer": {
+      "x": 216.33334350585938,
+      "width": 1472
+    },
+    "sidebar": 288,
+    "content": {
+      "x": 612.3333740234375,
+      "width": 664
+    },
+    "mainWidth": 1144,
+    "toc": {
+      "x": 1364.3333740234375,
+      "y": 112
+    }
+  },
+  "notes": [
+    "H3 and tables measured on Agents, not inferred from Quickstart.",
+    "Actual scrollbars affect content area width.",
+    "Source repository commit and hosted deployment are separate observations."
+  ]
+}

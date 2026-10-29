@@ -1,0 +1,56 @@
+{
+  "date": "2026-10-29",
+  "url": "https://docs.langchain.com/oss/python/langchain/quickstart",
+  "viewport": "1440x1000 light",
+  "tocActive": {
+    "textShadow": "rgb(22, 31, 52) -0.15px 0px 0px, rgb(22, 31, 52) 0.15px 0px 0px"
+  },
+  "contentLinks": [
+    {
+      "text": "LangChain Docs MCP servers",
+      "textDecoration": "none",
+      "borderBottom": "0.666667px solid rgb(45, 51, 25)"
+    }
+  ],
+  "footerSample": [
+    {
+      "tag": "A",
+      "text": "Docs by LangChain home page",
+      "fontSize": "16px",
+      "lineHeight": "24px",
+      "weight": "400"
+    },
+    {
+      "tag": "A",
+      "text": "github",
+      "fontSize": "16px",
+      "lineHeight": "24px",
+      "weight": "400"
+    },
+    {
+      "tag": "A",
+      "text": "x",
+      "fontSize": "16px",
+      "lineHeight": "24px",
+      "weight": "400"
+    },
+    {
+      "tag": "A",
+      "text": "linkedin",
+      "fontSize": "16px",
+      "lineHeight": "24px",
+      "weight": "400"
+    },
+    {
+      "tag": "A",
+      "text": "youtube",
+      "fontSize": "16px",
+      "lineHeight": "24px",
+      "weight": "400"
+    }
+  ],
+  "notes": [
+    "textShadow measured on the current TOC link.",
+    "Footer sample is the outer brand/social area; child footer typography remains a documented project adaptation."
+  ]
+}
