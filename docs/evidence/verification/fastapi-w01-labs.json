@@ -1,0 +1,109 @@
+{
+  "batch": "W01",
+  "chapters": [
+    "F01",
+    "F02",
+    "F03"
+  ],
+  "verified_at": "2026-10-29T18:45:31.178198+08:00",
+  "author_python": "3.12.4",
+  "os": "win32",
+  "results": [
+    {
+      "command": [
+        "C:\\Users\\luo13\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\native\\powershell\\pwsh.EXE",
+        "-NoProfile",
+        "-File",
+        "D:\\CCguiPlay\\AgentProject\\FastAPI_study\\courses\\fastapi\\labs\\f02-environment\\windows.ps1"
+      ],
+      "cwd": "D:\\CCguiPlay\\AgentProject\\FastAPI_study\\courses\\fastapi\\labs\\f02-environment",
+      "exit_code": 0,
+      "stdout": "\nPython 3.12.4\npip 24.0 from C:\\Users\\luo13\\AppData\\Local\\Temp\\fastapi-w01-a12cvij6\\fastapi-study\\.venv\\Lib\\site-packages\\pip (python 3.12)\n\nCollecting annotated-doc==0.0.5 (from -r requirements.lock.txt (line 2))\n  Downloading annotated_doc-0.0.5-py3-none-any.whl.metadata (6.5 kB)\nCollecting annotated-types==0.8.0 (from -r requirements.lock.txt (line 3))\n  Downloading annotated_types-0.8.0-py3-none-any.whl.metadata (15 kB)\nCollecting anyio==4.15.1 (from -r requirements.lock.txt (line 4))\n  Downloading anyio-4.15.1-py3-none-any.whl.metadata (4.7 kB)\nCollecting click==8.5.0 (from -r requirements.lock.txt (line 5))\n  Downloading click-8.5.0-py3-none-any.whl.metadata (2.6 kB)\nCollecting fastapi==0.162.0 (from -r requirements.lock.txt (line 6))\n  Downloading fastapi-0.162.0-py3-none-any.whl.metadata (26 kB)\nCollecting h11==0.16.0 (from -r requirements.lock.txt (line 7))\n  Downloading h11-0.16.0-py3-none-any.whl.metadata (8.3 kB)\nCollecting idna==3.20 (from -r requirements.lock.txt (line 8))\n  Downloading idna-3.20-py3-none-any.whl.metadata (7.2 kB)\nCollecting opentelemetry-api==1.45.1 (from -r requirements.lock.txt (line 9))\n  Downloading opentelemetry_api-1.45.1-py3-none-any.whl.metadata (1.4 kB)\nCollecting pydantic==2.14.1 (from -r requirements.lock.txt (line 10))\n  Downloading pydantic-2.14.1-py3-none-any.whl.metadata (133 kB)\n     ------------------------------------ 133.0/133.0 kB 982.1 kB/s eta 0:00:00\nCollecting pydantic_core==2.50.1 (from -r requirements.lock.txt (line 11))\n  Downloading pydantic_core-2.50.1-cp312-cp312-win_amd64.whl.metadata (6.7 kB)\nCollecting starlette==1.10.0 (from -r requirements.lock.txt (line 12))\n  Downloading starlette-1.10.0-py3-none-any.whl.metadata (6.6 kB)\nCollecting typing-inspection==0.4.4 (from -r requirements.lock.txt (line 13))\n  Downloading typing_inspection-0.4.4-py3-none-any.whl.metadata (2.6 kB)\nCollecting typing_extensions==4.16.0 (from -r requirements.lock.txt (line 14))\n  Downloading typing_extensions-4.16.0-py3-none-any.whl.metadata (3.3 kB)\nCollecting uvicorn==0.54.0 (from -r requirements.lock.txt (line 15))\n  Downloading uvicorn-0.54.0-py3-none-any.whl.metadata (6.6 kB)\nDownloading annotated_doc-0.0.5-py3-none-any.whl (5.3 kB)\nDownloading annotated_types-0.8.0-py3-none-any.whl (13 kB)\nDownloading anyio-4.15.1-py3-none-any.whl (132 kB)\n   ---------------------------------------- 132.1/132.1 kB 1.9 MB/s eta 0:00:00\nDownloading click-8.5.0-py3-none-any.whl (125 kB)\n   ---------------------------------------- 125.3/125.3 kB 3.6 MB/s eta 0:00:00\nDownloading fastapi-0.162.0-py3-none-any.whl (148 kB)\n   ---------------------------------------- 148.9/148.9 kB 4.5 MB/s eta 0:00:00\nDownloading h11-0.16.0-py3-none-any.whl (37 kB)\nDownloading idna-3.20-py3-none-any.whl (69 kB)\n   ---------------------------------------- 69.6/69.6 kB 3.7 MB/s eta 0:00:00\nDownloading opentelemetry_api-1.45.1-py3-none-any.whl (60 kB)\n   ---------------------------------------- 60.3/60.3 kB 3.3 MB/s eta 0:00:00\nDownloading pydantic-2.14.1-py3-none-any.whl (488 kB)\n   ---------------------------------------- 488.1/488.1 kB 4.4 MB/s eta 0:00:00\nDownloading pydantic_core-2.50.1-cp312-cp312-win_amd64.whl (2.2 MB)\n   ---------------------------------------- 2.2/2.2 MB 11.5 MB/s eta 0:00:00\nDownloading starlette-1.10.0-py3-none-any.whl (80 kB)\n   ---------------------------------------- 80.6/80.6 kB ? eta 0:00:00\nDownloading typing_inspection-0.4.4-py3-none-any.whl (14 kB)\nDownloading typing_extensions-4.16.0-py3-none-any.whl (45 kB)\n   ---------------------------------------- 45.6/45.6 kB 2.2 MB/s eta 0:00:00\nDownloading uvicorn-0.54.0-py3-none-any.whl (87 kB)\n   ---------------------------------------- 87.4/87.4 kB ? eta 0:00:00\nInstalling collected packages: typing_extensions, idna, h11, click, annotated-types, annotated-doc, uvicorn, typing-inspection, pydantic_core, opentelemetry-api, anyio, starlette, pydantic, fastapi\nSuccessfully installed annotated-doc-0.0.5 annotated-types-0.8.0 anyio-4.15.1 click-8.5.0 fastapi-0.162.0 h11-0.16.0 idna-3.20 opentelemetry-api-1.45.1 pydantic-2.14.1 pydantic_core-2.50.1 starlette-1.10.0 typing-inspection-0.4.4 typing_extensions-4.16.0 uvicorn-0.54.0\nWorking directory: C:\\Users\\luo13\\AppData\\Local\\Temp\\fastapi-w01-a12cvij6\\fastapi-study\nPython executable: C:\\Users\\luo13\\AppData\\Local\\Temp\\fastapi-w01-a12cvij6\\fastapi-study\\.venv\\Scripts\\python.exe\nPython version: 3.12.4\nFastAPI: 0.162.0\nUvicorn: 0.54.0\nPydantic: 2.14.1\nOK: project directory, interpreter and imports agree\nPath\n----\nC:\\Users\\luo13\\AppData\\Local\\Temp\\fastapi-w01-a12cvij6\\fastapi-study\n\n",
+      "stderr": "\n[notice] A new release of pip is available: 24.0 -> 26.2.2\n[notice] To update, run: C:\\Users\\luo13\\AppData\\Local\\Temp\\fastapi-w01-a12cvij6\\fastapi-study\\.venv\\Scripts\\python.exe -m pip install --upgrade pip\n"
+    },
+    {
+      "command": [
+        "C:\\Users\\luo13\\AppData\\Local\\Temp\\fastapi-w01-a12cvij6\\fastapi-study\\.venv\\Scripts\\python.exe",
+        "-m",
+        "pip",
+        "check"
+      ],
+      "cwd": "C:\\Users\\luo13\\AppData\\Local\\Temp\\fastapi-w01-a12cvij6\\fastapi-study",
+      "exit_code": 0,
+      "stdout": "No broken requirements found.\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "C:\\Users\\luo13\\AppData\\Local\\Temp\\fastapi-w01-a12cvij6\\fastapi-study\\.venv\\Scripts\\python.exe",
+        "C:\\Users\\luo13\\AppData\\Local\\Temp\\fastapi-w01-a12cvij6\\fastapi-study\\check_environment.py"
+      ],
+      "cwd": "C:\\Users\\luo13\\AppData\\Local\\Temp\\fastapi-w01-a12cvij6",
+      "exit_code": 1,
+      "stdout": "Working directory: C:\\Users\\luo13\\AppData\\Local\\Temp\\fastapi-w01-a12cvij6\nPython executable: C:\\Users\\luo13\\AppData\\Local\\Temp\\fastapi-w01-a12cvij6\\fastapi-study\\.venv\\Scripts\\python.exe\nPython version: 3.12.4\n",
+      "stderr": "ERROR: wrong working directory; open terminal in C:\\Users\\luo13\\AppData\\Local\\Temp\\fastapi-w01-a12cvij6\\fastapi-study\n"
+    },
+    {
+      "command": [
+        "C:\\Users\\luo13\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "check_environment.py"
+      ],
+      "cwd": "C:\\Users\\luo13\\AppData\\Local\\Temp\\fastapi-w01-a12cvij6\\fastapi-study",
+      "exit_code": 1,
+      "stdout": "Working directory: C:\\Users\\luo13\\AppData\\Local\\Temp\\fastapi-w01-a12cvij6\\fastapi-study\nPython executable: C:\\Users\\luo13\\AppData\\Local\\Programs\\Python\\Python312\\python.exe\nPython version: 3.12.4\n",
+      "stderr": "ERROR: wrong interpreter; use this project's .venv Python\n"
+    },
+    {
+      "command": [
+        "C:\\Users\\luo13\\AppData\\Local\\Temp\\fastapi-w01-a12cvij6\\fastapi-study\\.venv\\Scripts\\python.exe",
+        "check_environment.py"
+      ],
+      "cwd": "C:\\Users\\luo13\\AppData\\Local\\Temp\\fastapi-w01-a12cvij6\\fastapi-study",
+      "exit_code": 0,
+      "stdout": "Working directory: C:\\Users\\luo13\\AppData\\Local\\Temp\\fastapi-w01-a12cvij6\\fastapi-study\nPython executable: C:\\Users\\luo13\\AppData\\Local\\Temp\\fastapi-w01-a12cvij6\\fastapi-study\\.venv\\Scripts\\python.exe\nPython version: 3.12.4\nFastAPI: 0.162.0\nUvicorn: 0.54.0\nPydantic: 2.14.1\nOK: project directory, interpreter and imports agree\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "C:\\Users\\luo13\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\native\\powershell\\pwsh.EXE",
+        "-NoProfile",
+        "-File",
+        "D:\\CCguiPlay\\AgentProject\\FastAPI_study\\courses\\fastapi\\labs\\f03-python\\windows.ps1"
+      ],
+      "cwd": "C:\\Users\\luo13\\AppData\\Local\\Temp\\fastapi-w01-a12cvij6\\fastapi-study",
+      "exit_code": 0,
+      "stdout": "Hello, Lin\nRead the docs\nFalse\n2\nimports: before import\nmessages: loaded\nimports: after import\nHello, Lin\n3\nthree\nregistered: hello\ncalling now\nHello, Lin\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "C:\\Users\\luo13\\AppData\\Local\\Temp\\fastapi-w01-a12cvij6\\fastapi-study\\.venv\\Scripts\\python.exe",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "D:\\CCguiPlay\\AgentProject\\FastAPI_study\\courses\\fastapi\\tests",
+        "-v"
+      ],
+      "cwd": "C:\\Users\\luo13\\AppData\\Local\\Temp\\fastapi-w01-a12cvij6\\fastapi-study",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "test_collections_preserve_value_types (test_w01.PythonLessons.test_collections_preserve_value_types) ... ok\ntest_dictionary_typo_has_specific_error_and_recovers (test_w01.PythonLessons.test_dictionary_typo_has_specific_error_and_recovers) ... ok\ntest_functions_can_change_one_input_and_restore (test_w01.PythonLessons.test_functions_can_change_one_input_and_restore) ... ok\ntest_import_loads_module_before_explicit_call (test_w01.PythonLessons.test_import_loads_module_before_explicit_call) ... ok\ntest_missing_sibling_module_has_specific_error_and_recovers (test_w01.PythonLessons.test_missing_sibling_module_has_specific_error_and_recovers) ... ok\ntest_registration_does_not_invoke_function (test_w01.PythonLessons.test_registration_does_not_invoke_function) ... ok\ntest_syntax_error_is_visible_and_source_can_be_restored (test_w01.PythonLessons.test_syntax_error_is_visible_and_source_can_be_restored) ... ok\ntest_type_hints_do_not_validate_direct_calls (test_w01.PythonLessons.test_type_hints_do_not_validate_direct_calls) ... ok\ntest_wrong_working_directory_is_explained (test_w01.PythonLessons.test_wrong_working_directory_is_explained) ... ok\n\n----------------------------------------------------------------------\nRan 9 tests in 0.991s\n\nOK\n"
+    }
+  ],
+  "gaps": [
+    "No real beginner/PyCharm follow-along participant.",
+    "macOS/Linux shell has syntax verification only; no full POSIX package installation run.",
+    "F01 HTTP messages are labeled teaching illustrations; no HTTP service runs in W01."
+  ],
+  "shell_syntax": {
+    "windows": [
+      "f02 windows.ps1: PowerShell Parser no errors",
+      "f03 windows.ps1: PowerShell Parser no errors"
+    ],
+    "posix": [
+      "f02 posix.sh: C:/Program Files/Git/bin/bash.exe -n exit 0",
+      "f03 posix.sh: C:/Program Files/Git/bin/bash.exe -n exit 0"
+    ]
+  }
+}

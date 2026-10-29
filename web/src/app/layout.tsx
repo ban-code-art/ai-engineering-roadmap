@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import "./docs.css";
+import "./lessons.css";
+import "./lesson-diagrams.css";
 
 export const metadata: Metadata = {
   title: { default: "AI Engineering Roadmap", template: "%s · AI Engineering Roadmap" },
-  description: "AI 工程学习知识库。基础教程与项目实践统一使用 LangChain 风格文档框架，内容将重新编写。",
+  description: "AI 工程学习知识库。循序渐进学习 FastAPI，基础教程与项目实践统一使用 LangChain 风格文档框架。",
   icons: { icon: "/icon.svg" },
 };
 

@@ -1,0 +1,107 @@
+.docs-lesson-diagram {
+  --docs-diagram-bg: #fafbf8;
+  --docs-diagram-node: var(--docs-bg);
+  --docs-diagram-ink: #263429;
+  --docs-diagram-muted: #5c665e;
+  --docs-diagram-line: #a6b1a4;
+  --docs-diagram-border: #dce3d8;
+  --docs-diagram-accent: #526f32;
+  --docs-diagram-accent-bg: #f0f5e7;
+  --docs-diagram-accent-border: #b9cba0;
+  container-type: inline-size;
+  margin: 24px 0 32px;
+  border: 1px solid var(--docs-diagram-border);
+  border-radius: 16px;
+  background: var(--docs-diagram-bg);
+  overflow: hidden;
+  color: var(--docs-diagram-ink);
+}
+
+.docs-frame[data-docs-theme="dark"] .docs-lesson-diagram {
+  --docs-diagram-bg: #10170f;
+  --docs-diagram-node: #151e14;
+  --docs-diagram-ink: #edf3e8;
+  --docs-diagram-muted: #b1beaa;
+  --docs-diagram-line: #819377;
+  --docs-diagram-border: #42513d;
+  --docs-diagram-accent: #c3e796;
+  --docs-diagram-accent-bg: #24351a;
+  --docs-diagram-accent-border: #759752;
+}
+
+@media (prefers-color-scheme: dark) {
+  .docs-frame[data-docs-theme="system"] .docs-lesson-diagram {
+    --docs-diagram-bg: #10170f;
+    --docs-diagram-node: #151e14;
+    --docs-diagram-ink: #edf3e8;
+    --docs-diagram-muted: #b1beaa;
+    --docs-diagram-line: #819377;
+    --docs-diagram-border: #42513d;
+    --docs-diagram-accent: #c3e796;
+    --docs-diagram-accent-bg: #24351a;
+    --docs-diagram-accent-border: #759752;
+  }
+}
+
+.docs-lesson-diagram-heading {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 14px;
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--docs-diagram-border);
+  font-size: 14px;
+  line-height: 22px;
+}
+
+.docs-lesson-diagram-eyebrow {
+  color: var(--docs-diagram-accent);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.docs-lesson-diagram-heading strong { font-weight: 600; }
+.docs-lesson-diagram-canvas { padding: 12px; }
+.docs-lesson-diagram-svg { display: block; width: 100%; height: auto; margin: 0 auto; overflow: visible; }
+.docs-lesson-diagram-wide { max-width: 640px; }
+.docs-lesson-diagram-compact { display: none; max-width: 340px; }
+
+.docs-lesson-diagram-svg text {
+  fill: var(--docs-diagram-ink);
+  font-family: "Framework Body", "Framework CJK", sans-serif;
+}
+
+.docs-lesson-diagram-title { font-size: 16px; font-weight: 600; }
+.docs-lesson-diagram-label { font-size: 15px; }
+.docs-lesson-diagram-svg .docs-lesson-diagram-muted { fill: var(--docs-diagram-muted); }
+.docs-lesson-diagram-svg .docs-lesson-diagram-mono { font-family: "Framework Mono", "Framework CJK", monospace; }
+.docs-lesson-diagram-node rect { fill: var(--docs-diagram-node); stroke: var(--docs-diagram-border); stroke-width: 1.2; }
+.docs-lesson-diagram-node[data-accent="true"] rect { fill: var(--docs-diagram-accent-bg); stroke: var(--docs-diagram-accent-border); }
+.docs-lesson-diagram-node[data-accent="true"] .docs-lesson-diagram-title { fill: var(--docs-diagram-accent); }
+.docs-lesson-diagram-arrow { fill: none; stroke: var(--docs-diagram-line); stroke-width: 1.5; stroke-linejoin: round; }
+.docs-lesson-diagram-arrow[data-accent="true"] { stroke: var(--docs-diagram-accent); }
+.docs-lesson-diagram-arrow[data-dashed="true"] { stroke-dasharray: 5 5; }
+.docs-lesson-diagram-marker { fill: var(--docs-diagram-line); }
+.docs-lesson-diagram-marker[data-accent="true"] { fill: var(--docs-diagram-accent); }
+.docs-lesson-diagram-lifeline { fill: none; stroke: var(--docs-diagram-border); stroke-width: 1.2; stroke-dasharray: 4 6; }
+.docs-lesson-diagram-boundary { fill: none; stroke: var(--docs-diagram-border); stroke-width: 1.2; stroke-dasharray: 4 5; }
+.docs-lesson-diagram figcaption { padding: 4px 20px 16px; color: var(--docs-diagram-muted); font-size: 14px; line-height: 23px; }
+.docs-lesson-diagram-equivalent { border-top: 1px solid var(--docs-diagram-border); padding: 12px 20px; font-size: 14px; line-height: 24px; }
+.docs-lesson-diagram-equivalent summary { color: var(--docs-diagram-ink); }
+.docs-lesson-diagram-equivalent ol { margin: 12px 0 4px; padding-left: 24px; }
+.docs-lesson-diagram-equivalent li { margin: 8px 0; }
+
+/* Narrow article columns use a separate composition, rather than shrinking a wide diagram. */
+@container (max-width: 585px) {
+  .docs-lesson-diagram-wide { display: none; }
+  .docs-lesson-diagram-compact { display: block; }
+  .docs-lesson-diagram-canvas { padding: 12px 0; }
+  .docs-lesson-diagram-title { font-size: 16px; }
+  .docs-lesson-diagram-label { font-size: 15px; }
+  .docs-lesson-diagram-mono { font-size: 15px; }
+}
+
+@media print {
+  .docs-lesson-diagram { break-inside: avoid; }
+  .docs-lesson-diagram-equivalent { display: none; }
+}

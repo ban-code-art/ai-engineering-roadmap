@@ -19,7 +19,12 @@ const courseRoutes = [
   {path:'/project/langchain',title:'LangChain 项目实战',section:'langchain-project'},
   {path:'/project/rag',title:'RAG 项目实战',section:'rag-project'},
 ];
-for(const path of ['/',...courseRoutes.map(course=>course.path)]) {
+const lessonRoutes = [
+  {path:'/learn/fastapi/http-request-response',title:'读懂 HTTP 请求与响应'},
+  {path:'/learn/fastapi/environment-and-project-root',title:'准备环境与项目根目录'},
+  {path:'/learn/fastapi/python-for-api',title:'读懂写接口需要的 Python'},
+];
+for(const path of ['/',...courseRoutes.map(course=>course.path),...lessonRoutes.map(lesson=>lesson.path)]) {
   const response=await fetch(base+path,{signal:AbortSignal.timeout(10000)});
   assert.equal(response.status,200,path);
   const html=await response.text();
@@ -33,13 +38,19 @@ for(const path of ['/',...courseRoutes.map(course=>course.path)]) {
   assert.ok(navbar,`${path} missing course navigation`);
   for(const course of courseRoutes)assert.ok(navbar.includes(course.title)&&navbar.includes(`href="${course.path}"`),`${path} missing ${course.title} tab`);
   assert.ok(!navbar.includes('路线概览')&&!navbar.includes('>基础教程<')&&!navbar.includes('>项目实践<'),`${path} retained old navigation categories`);
-  if(path!=='/')assert.ok(html.includes('重新编写')||html.includes('待编写'),`${path} must state the empty content status`);
+  if(path.startsWith('/project'))assert.ok(html.includes('待编写'),`${path} must state the empty content status`);
+  const lesson = lessonRoutes.find(lesson=>lesson.path===path);
+  if(lesson) {
+    assert.ok(html.includes(`<h1>${lesson.title}</h1>`),`${path} must show its own chapter title`);
+    assert.ok(html.includes('<pre')&&html.includes('data-diagram-kind='),`${path} must ship core code and diagrams in HTML`);
+    assert.ok(/href="https:\/\/github.com\/ban-code-art\/ai-engineering-roadmap\/blob\/[a-f0-9]{40}\/courses\/fastapi\/labs\//.test(html),`${path} missing pinned source`);
+  }
   assert.ok(!html.includes('/learn/06-first-api'),`Retired lesson link in ${path}`);
   const assets=new Set([...html.matchAll(/(?:src|href)="(\/_next\/static\/[^\"]+|\/fonts\/[^\"]+)"/g)].map(m=>m[1].replaceAll('&amp;','&')));
   for(const asset of assets) assert.equal((await fetch(base+asset)).status,200,asset);
   routes.push({path,status:response.status,sharedTemplate:true,assets:assets.size});
 }
-for(const path of ['/learn/06-first-api','/project/g2']) assert.equal((await fetch(base+path)).status,404,path);
+for(const path of ['/learn/06-first-api','/project/g2','/learn/fastapi/first-application']) assert.equal((await fetch(base+path)).status,404,path);
 assert.equal((await fetch(base+'/framework-preview')).status,preview?200:404);
 const css=await (await fetch(base+'/fonts/fonts.css')).text();
 const fonts=[...css.matchAll(/url\('([^']+)'\)/g)].map(m=>m[1]);

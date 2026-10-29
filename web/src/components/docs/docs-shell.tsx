@@ -169,7 +169,7 @@ export function DocsShell({ children, targets, searchEntries, section = "preview
     </nav>
     <div className="docs-sidebar-foot">
       <a href={siteInfo.repositoryUrl} target="_blank" rel="noreferrer">GitHub 源码<span aria-hidden="true">↗</span></a>
-      <p>{isPreview ? "内部预览 · 不计入学习进度" : "内容待编写"}</p>
+      <p>{isPreview ? "内部预览 · 不计入学习进度" : section === "learn" ? "入门准备 · 3 章已发布" : "课程逐步编写中"}</p>
     </div>
   </>;
 
@@ -223,7 +223,7 @@ export function DocsShell({ children, targets, searchEntries, section = "preview
           </details>
           {children}
           <footer className="docs-footer">
-            <div><strong>{siteInfo.name}</strong><p>学习路线 · 内容待编写</p></div>
+            <div><strong>{siteInfo.name}</strong><p>学习路线 · 循序渐进</p></div>
             <nav aria-label="页尾">
               <Link href="/learn">FastAPI 教程 ↗</Link>
               <Link href="/project">FastAPI 项目实战 ↗</Link>

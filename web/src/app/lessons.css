@@ -1,0 +1,23 @@
+.docs-code-heading {flex:1;min-width:0;}
+.docs-code-source-link {font-size:12px;line-height:20px;white-space:nowrap;color:var(--docs-primary)!important;}
+.docs-course-chapters {list-style:none;padding:0;margin:24px 0;}
+.docs-course-chapters li {border-bottom:1px solid var(--docs-border);}
+.docs-course-chapters a {display:flex;align-items:center;gap:20px;padding:20px 0;}
+.docs-course-chapters a:hover strong {color:var(--docs-blue);}
+.docs-chapter-number {font-size:12px;letter-spacing:.06em;color:var(--docs-muted);font-family:"Framework Mono",monospace;}
+.docs-course-chapters a>span:nth-child(2) {flex:1;}
+.docs-chapter-summary {display:block;color:var(--docs-muted);font-size:14px;line-height:24px;margin-top:6px;}
+.docs-lesson-pagination {display:flex;gap:24px;margin:40px 0 72px;padding-top:24px;border-top:1px solid var(--docs-border);}
+.docs-lesson-pagination a {flex:1;display:block;max-width:50%;}
+.docs-lesson-pagination a:last-child {text-align:right;margin-left:auto;}
+.docs-lesson-pagination a:first-child {text-align:left;margin-left:0;}
+.docs-lesson-pagination span {display:block;color:var(--docs-muted);font-size:13px;line-height:24px;}
+.docs-lesson-pagination strong {display:block;font-weight:500;font-size:15px;line-height:24px;}
+.docs-lesson-pagination a:hover strong {color:var(--docs-blue);}
+.docs-frame li {margin-bottom:8px;}
+.docs-frame :is(li,th) code {font-size:.875em;overflow-wrap:anywhere;}
+@media(max-width:768px) {
+  .docs-page-heading:has(.docs-page-copy) {align-items:flex-start;flex-direction:column;}
+  .docs-course-chapters a {gap:12px;}
+  .docs-lesson-pagination {gap:16px;}
+}

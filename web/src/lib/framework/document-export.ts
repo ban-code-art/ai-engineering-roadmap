@@ -11,7 +11,7 @@ export function exportDocumentText(node:ReactNode,options:{excludeTypes?:unknown
     if(!isValidElement(value))return '';
     const props=value.props as {children?:ReactNode;title?:string;samples?:CodeSample[];defaultSampleId?:string;items?:{title:string;body:ReactNode}[];flowOnly?:boolean};
     // Native/controlled disclosures are optional alternatives, not the default lesson stream.
-    if(value.type==='details'||options.excludeTypes?.includes(value.type))return '';
+    if(value.type==='details'||value.type==='svg'||options.excludeTypes?.includes(value.type))return '';
     if(props.samples) {
       if(props.flowOnly)return '输入 → 接收 → 匹配 → 处理函数 → 输出';
       const sample=props.samples.find(s=>s.id===props.defaultSampleId)??props.samples[0];

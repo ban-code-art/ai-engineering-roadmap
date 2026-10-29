@@ -4,7 +4,7 @@
 
 构建一个中文AI工程学习知识库，当前从FastAPI方向开始。基础教程与项目实践统一使用LangChain官方文档风格的React/TSX模板：分组导航、连续正文、页内目录、代码与提示、局部图/文件，以及本地搜索和主题。
 
-当前任务是 **FastAPI教程的课程结构设计**：从初学基础递进到企业开发习惯，最后交付完整TaskBoard API demo。依据[FastAPI分区与章节设计](docs/planning/fastapi-curriculum.md)，规划8个分区、42个独立章节（41主线/1选读）、M0–M7完整版本。不是顶部FastAPI项目实战专栏，不将全课程放一页；本轮不写教材正文/源码/页面。
+当前任务是 **FastAPI教程的分批编写**：依据[课程设计](docs/planning/fastapi-curriculum.md)，W01/F01–F03 先完成 HTTP、环境与必要 Python。长期保持8分区、42独立章（41主线/1选读）和M0–M7完整 TaskBoard API demo 路线；每批最多3章，一章一页，章内连续阅读。
 
 旧教程、旧示例业务、旧前端和批量生成脚本已退出本项目；后续内容重新编写，不迁移旧教材。顶部以FastAPI教程、FastAPI项目实战、LangChain项目实战、RAG项目实战分类；首页从品牌/侧栏进入，各课程入口均注明内容待编写。
 
@@ -24,4 +24,4 @@
 
 ## 接续
 
-当前进度见[handoff.md](docs/agent-continuity/handoff.md)。结构清理与统一模板已上传；本轮只设计FastAPI基础课脉络。后续按W01/W02小批次从零编写，不恢复旧材料，也不提前开放未完成章节。
+当前进度见[handoff.md](docs/agent-continuity/handoff.md)。W01 三章已编写，源码先发布再固定引用到页面；W02 及后续逐批推进，不恢复旧材料，不提前开放未完成章节。

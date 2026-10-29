@@ -81,6 +81,7 @@ export function CodeGroup({ id, samples, title, defaultSampleId }: CodeGroupProp
             </p>
           )}
         </div>
+        {selectedSample.sourceUrl && <a className="docs-code-source-link" href={selectedSample.sourceUrl} target="_blank" rel="noreferrer">查看源码 ↗</a>}
         <DocsCopyButton text={selectedSample.code} label="复制代码" iconOnly />
       </div>
       <div className="docs-code-tabs" role="tablist" aria-label={title ? `${title}版本` : "代码版本"} aria-orientation="horizontal">

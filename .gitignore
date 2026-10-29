@@ -2,6 +2,9 @@ node_modules/
 web/.next/
 web/.next-framework/
 web/*.tsbuildinfo
+web/.course-sources/
+web/src/content/fastapi/generated-sources.json
+web/src/content/fastapi/generated-sources.json.*.tmp
 web/playwright-report/
 web/test-results/
 .venv/

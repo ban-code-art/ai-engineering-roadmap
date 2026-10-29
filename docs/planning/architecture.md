@@ -22,6 +22,6 @@
 
 后续新教程的源码引用限定白名单目录和真实版本/hash。内部fixture同样使用白名单，浏览器不读取本地磁盘。新工程/概念/阶段类型随首批内容扩展，不先建立CMS或通用课程生成器。
 
-FastAPI基础课拟新增`courses/fastapi/demo`（同一个渐进项目）、`courses/fastapi/labs`（按需独立实验）及source-manifest；TSX解释拟位于`web/src/content/fastapi/chapters`，路由`/learn/fastapi/<slug>`。这些位置尚未建立，本轮只有[课程结构设计](./fastapi-curriculum.md)，不创建空schema、空课程或不可用源码入口。
+FastAPI基础课已建立`courses/fastapi/labs`和固定source-manifest；W01 三章的受控TSX位于`web/src/content/fastapi/chapters`，独立路由`/learn/fastapi/<slug>`。`courses/fastapi/demo`从后续首应用阶段才建立，不预先生成空业务层或未发布课程。
 
-sourceRef按章内实际步骤分别固定已发布提交，页面提交中的manifest引用先前源码提交。新机器构建先核对对象/固定ref、白名单提取、源hash/行号与按SHA隔离缓存，再加载展示数据；任何缺失/不匹配阻止课程构建，禁止退回main/当前工作树。阅读随部署带生成源码，无需浏览器Git或demo服务在线。
+sourceRef按章内实际步骤分别固定已发布提交，页面提交中的manifest引用先前源码提交。`prepare-course-sources.ts`先核对对象/固定tag、白名单提取、源hash与按SHA隔离缓存，再原子生成阅读快照；章节取片段时检查行号。缺对象时用私有fetch ref校验SHA，不依赖共享FETCH_HEAD；任何缺失/不匹配阻止构建，禁止退回main/当前工作树。阅读随部署带生成源码，无需浏览器Git或demo服务在线。

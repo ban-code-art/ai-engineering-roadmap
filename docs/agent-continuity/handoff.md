@@ -2,35 +2,33 @@
 
 ## Snapshot
 
-- Goal: 规划FastAPI基础教程的渐进知识路线，最终完整版TaskBoard API demo；先设计，不写教程代码。
-- Progress: FA-CURRICULUM-1.0已完成8区/42独立章/41主线1选读/M0–M7与16写作批次；各章前置/概念/操作/图/源码发布规则已审阅，159实现文件不变。
-- Next: W01起点三章的小节设计与素材准备，之后W02首接口校准；实际正文/源码实施需跟随后续用户指令。
+- Goal: 依据FA-CURRICULUM-1.0逐批写通俗、独立页面的FastAPI基础课，长期完成TaskBoard API demo。
+- Progress: W01/F01–F03正文、lab、SVG、导航已完成；源A739a064与tag已推送，页面B待同步。23前端检查/9Python测试、干净Windows环境、构建/类型/双模式路由、桌面手机/双主题通过。
+- Next: 同步页面B后结束本批；下次从W02/F04–F06首接口创建/启动/排错校准开始。
 
 ## Read First
 
-- DESIGN.md唯一入口；docs/planning/fastapi-curriculum.md唯一FastAPI课程脉络。
-- frontend-page-design.md负责LangChain模板/独立章节页与连续页内小节；writing-standard.md负责解释与源码/图规范。
-- fastapi-curriculum-review.json与sources.json是证据，不是另一个课程方案。
+- DESIGN.md唯一设计入口，fastapi-curriculum.md唯一课程脉络；writing-standard.md负责解释/图/固定源。
+- docs/evidence/verification/fastapi-w01-review.md及labs.json/diagrams.md是本批证据，checkpoint与evidence列最后验证。
 
 ## Do Not Change
 
-- 本轮仅课程结构，不改web实现/导航/页面，不写Python或恢复旧课程，规划中的源码路径不能生成假GitHub链接。
-- 当前属于 /learn 的FastAPI教程；结课demo在本课成长，不跳到 /project 企业项目专栏。
-- 一章一页，正文全部小节连续；首次概念就地解释，图与代码来自本步真实版本。
+- 一章一页、章内连续小节，共享DocsShell；未发布章不加入导航/搜索，不恢复旧教材或fixtures当课程。
+- 基础课在/learn逐步长成demo，不跳入/project另一个实践专栏。W01没有API服务，首应用从F04开始。
+- 源码先发布提交/检查点，页面manifest按各sourceRef固定40位SHA/hash；不回退main或工作文件；读者无需Git/在线demo。
 
 ## Current Risks
 
-- 全部42章尚未编写。章节数/架构图/计划功能不等于已运行或学习通过。
-- 官方SQL数据库教程当前用SQLModel，本课选SQLAlchemy需明确工具补课；同步M4完成后再异步PG，不提前Docker。
-- 源码先发布提交/检查点ref，页面后用manifest各sourceRef固定SHA；浅克隆缺对象不得回退main/工作树，取源失败阻止课程build。
-- 标题Manrope与TWK是明确字族差异；字体授权/模板既有记录继续保留。
-- Git有main与origin，课程设计可同步，不重初始化或强推。
+- 真实初学者/PyCharm跟做、完整浏览器禁JS未完成；SSR默认正文/代码/SVG已验证，不夸大学习效果。
+- Windows作者3.12.4实测；3.12.10仅安装入口。POSIX本地只语法检查，CI新增完整安装，结果另确认。
+- 本机npm用户配置冲突可用--userconfig=NUL命令级覆盖，不改全局设置。
+- 本地生产3000与预览3001已重新启动。重建前核对监听PID和命令身份再停止，避免Windows文件锁。
 
 ## Last Interaction
 
-- 用户要求FastAPI基础到企业工程实践的渐进课程，最终完整demo，但当前只分区/目录/分章理清脉络；要认真绘图、逐概念解释和GitHub源码跳转，不把全课糅合一页。
+- 用户要求按目录正式写作，从简单到难、短代码/注释/包/美观图/独立章，不一次写全课，写完认真核查。
 
 ## Continue From
 
-- A区F01只读HTTP示意，F02环境/目录，F03必要Python；F04解释FastAPI导入/对象/完整路由，F05才真实HTTP闭环。
-- 项目主线TaskBoard API：内存→组织→同步SQLite/身份M4→异步PG→客户端/附件/观测→Docker/恢复M7；F37后台任务为选读，不成为可靠队列承诺。
+- W02：F04解释FastAPI导入、对象创建/赋值、路由登记与完整函数；F05真实HTTP运行；F06调试/恢复，不先引入数据库或身份。
+- 长期TaskBoard API：内存→组织→同步SQLite/身份M4→异步PG→客户端/附件/观测→Docker/恢复M7；F37选读背景任务不承诺可靠队列。

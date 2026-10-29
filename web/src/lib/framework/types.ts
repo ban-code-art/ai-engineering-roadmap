@@ -27,5 +27,6 @@ export interface CodeSample {
   sourcePath?: string;
   sourceHash?: string;
   checkpoint?: string;
+  sourceUrl?: string;
 }
 export const PREVIEW_PATH = "/framework-preview";

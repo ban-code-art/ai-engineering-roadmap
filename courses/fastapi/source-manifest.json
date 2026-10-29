@@ -1,0 +1,140 @@
+{
+  "format": "fastapi-source-manifest/v1",
+  "sources": [
+    {
+      "id": "f01-request",
+      "commit": "739a0646e7a07a05f29e8316773f0fc5adb4d23b",
+      "checkpointRef": "refs/tags/fastapi-w01",
+      "sourceRoot": "courses/fastapi/labs/f01-http",
+      "path": "requests.http",
+      "sha256": "282be0a5f2b88ba054afba328eb0e0c3c81b478e5c67153a995126519700c74d",
+      "language": "http"
+    },
+    {
+      "id": "f01-response",
+      "commit": "739a0646e7a07a05f29e8316773f0fc5adb4d23b",
+      "checkpointRef": "refs/tags/fastapi-w01",
+      "sourceRoot": "courses/fastapi/labs/f01-http",
+      "path": "responses.http",
+      "sha256": "5b9a945445d71f412c03d117db9ff0e4c9326e97d6faa92678dc425e2d64dbeb",
+      "language": "http"
+    },
+    {
+      "id": "f02-check",
+      "commit": "739a0646e7a07a05f29e8316773f0fc5adb4d23b",
+      "checkpointRef": "refs/tags/fastapi-w01",
+      "sourceRoot": "courses/fastapi/labs/f02-environment",
+      "path": "check_environment.py",
+      "sha256": "4ad3865c481dc176c1378e5edad58397880046ed5ae2aa9b95676f75c1558eab",
+      "language": "python"
+    },
+    {
+      "id": "f02-windows",
+      "commit": "739a0646e7a07a05f29e8316773f0fc5adb4d23b",
+      "checkpointRef": "refs/tags/fastapi-w01",
+      "sourceRoot": "courses/fastapi/labs/f02-environment",
+      "path": "windows.ps1",
+      "sha256": "1fd1fad9d739b0021cbfab53b328f6879d8cdd64c9eb670a432ae52416d6937a",
+      "language": "powershell"
+    },
+    {
+      "id": "f02-posix",
+      "commit": "739a0646e7a07a05f29e8316773f0fc5adb4d23b",
+      "checkpointRef": "refs/tags/fastapi-w01",
+      "sourceRoot": "courses/fastapi/labs/f02-environment",
+      "path": "posix.sh",
+      "sha256": "c6e159498ae8d7a4fb738c68d85c22c1d8f28208b1a1014ec51fd2ff870b0301",
+      "language": "bash"
+    },
+    {
+      "id": "f02-requirements",
+      "commit": "739a0646e7a07a05f29e8316773f0fc5adb4d23b",
+      "checkpointRef": "refs/tags/fastapi-w01",
+      "sourceRoot": "courses/fastapi/labs/f02-environment",
+      "path": "requirements.txt",
+      "sha256": "1caa7e53c9336c38dbf814b10735f76d24e72ee9071bc4a00685443107a5938e",
+      "language": "text"
+    },
+    {
+      "id": "f02-lock",
+      "commit": "739a0646e7a07a05f29e8316773f0fc5adb4d23b",
+      "checkpointRef": "refs/tags/fastapi-w01",
+      "sourceRoot": "courses/fastapi/labs/f02-environment",
+      "path": "requirements.lock.txt",
+      "sha256": "a9ff81bc426a79ae0fc0e3f762c4b1e606059b562303b264a233e3eee763f294",
+      "language": "text"
+    },
+    {
+      "id": "f03-functions",
+      "commit": "739a0646e7a07a05f29e8316773f0fc5adb4d23b",
+      "checkpointRef": "refs/tags/fastapi-w01",
+      "sourceRoot": "courses/fastapi/labs/f03-python",
+      "path": "functions.py",
+      "sha256": "a5163e64d2197bf0460e490792865afda396b7f67c9c17e5f94fb8499c256fc9",
+      "language": "python"
+    },
+    {
+      "id": "f03-containers",
+      "commit": "739a0646e7a07a05f29e8316773f0fc5adb4d23b",
+      "checkpointRef": "refs/tags/fastapi-w01",
+      "sourceRoot": "courses/fastapi/labs/f03-python",
+      "path": "containers.py",
+      "sha256": "cded9ffd571e79bef9b8a0c59ddd4c2bd7d7f15178a3136166819cdb891666d5",
+      "language": "python"
+    },
+    {
+      "id": "f03-imports",
+      "commit": "739a0646e7a07a05f29e8316773f0fc5adb4d23b",
+      "checkpointRef": "refs/tags/fastapi-w01",
+      "sourceRoot": "courses/fastapi/labs/f03-python",
+      "path": "imports.py",
+      "sha256": "edd8069a7c6f775f2bd00786095156fca124cdd5f4fca95e077652c4a17c1c3c",
+      "language": "python"
+    },
+    {
+      "id": "f03-messages",
+      "commit": "739a0646e7a07a05f29e8316773f0fc5adb4d23b",
+      "checkpointRef": "refs/tags/fastapi-w01",
+      "sourceRoot": "courses/fastapi/labs/f03-python",
+      "path": "messages.py",
+      "sha256": "581c520ffcb8eabf9b707cfb0f2ce435cb4dab9829c22e099f32ba08e2263e2c",
+      "language": "python"
+    },
+    {
+      "id": "f03-annotations",
+      "commit": "739a0646e7a07a05f29e8316773f0fc5adb4d23b",
+      "checkpointRef": "refs/tags/fastapi-w01",
+      "sourceRoot": "courses/fastapi/labs/f03-python",
+      "path": "annotations.py",
+      "sha256": "e48208dea47d5569d47da422cac7325714d7e0121a692a52ca3c80b5ff8f1af8",
+      "language": "python"
+    },
+    {
+      "id": "f03-decorators",
+      "commit": "739a0646e7a07a05f29e8316773f0fc5adb4d23b",
+      "checkpointRef": "refs/tags/fastapi-w01",
+      "sourceRoot": "courses/fastapi/labs/f03-python",
+      "path": "decorators.py",
+      "sha256": "f1085007941124c5cb0ab6823c65e18d434bbdd3aaba42e96c374193a12929b3",
+      "language": "python"
+    },
+    {
+      "id": "f03-windows",
+      "commit": "739a0646e7a07a05f29e8316773f0fc5adb4d23b",
+      "checkpointRef": "refs/tags/fastapi-w01",
+      "sourceRoot": "courses/fastapi/labs/f03-python",
+      "path": "windows.ps1",
+      "sha256": "c569c4e0addd33e25096c9cf817847e391b7bb5c6ffc5e33cfe9ca888ed23bf2",
+      "language": "powershell"
+    },
+    {
+      "id": "f03-posix",
+      "commit": "739a0646e7a07a05f29e8316773f0fc5adb4d23b",
+      "checkpointRef": "refs/tags/fastapi-w01",
+      "sourceRoot": "courses/fastapi/labs/f03-python",
+      "path": "posix.sh",
+      "sha256": "29714410449b4c67f44db84f6a00eaf6c1c43e0ad73cd3993faf22f9e414e374",
+      "language": "bash"
+    }
+  ]
+}

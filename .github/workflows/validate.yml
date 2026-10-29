@@ -9,6 +9,21 @@ permissions:
   contents: read
 
 jobs:
+  labs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m unittest discover -s courses/fastapi/tests -v
+      - run: bash -n courses/fastapi/labs/f02-environment/posix.sh && bash -n courses/fastapi/labs/f03-python/posix.sh
+      - name: Follow the POSIX environment setup with pinned dependencies
+        run: |
+          bash courses/fastapi/labs/f02-environment/posix.sh
+          cd "$HOME/fastapi-study"
+          ./.venv/bin/python -m pip check
+          ./.venv/bin/python check_environment.py
   web:
     runs-on: ubuntu-latest
     defaults:

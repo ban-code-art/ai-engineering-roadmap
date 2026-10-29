@@ -1,4 +1,5 @@
 import type { DocTarget, SearchEntry } from "@/lib/framework/types";
+import { fastapiChapters, chapterHref } from "./fastapi/course";
 
 export type SiteSection = "overview" | "learn" | "project" | "langchain-project" | "rag-project";
 
@@ -22,7 +23,7 @@ export const siteInfo = {
 
 /** Every public navigation item points to an existing, published route. */
 export const sections: SiteSectionInfo[] = [
-  { id: "learn", title: "FastAPI 教程", href: "/learn", description: "FastAPI 基础教程将重新编写，循序渐进地学习接口与后端开发。" },
+  { id: "learn", title: "FastAPI 教程", href: "/learn", description: "从 HTTP、Python 环境和必要语法开始，循序渐进地搭建完整 FastAPI demo。" },
   { id: "project", title: "FastAPI 项目实战", href: "/project", description: "FastAPI 项目实战内容待编写，沿用统一文档模板。" },
   { id: "langchain-project", title: "LangChain 项目实战", href: "/project/langchain", description: "LangChain 项目实战内容待编写，面向大模型应用开发。" },
   { id: "rag-project", title: "RAG 项目实战", href: "/project/rag", description: "RAG 项目实战内容待编写，面向检索增强生成应用。" },
@@ -41,7 +42,7 @@ function targetsFor(): DocTarget[] {
   ];
 }
 export const sectionTargets: Record<SiteSection, DocTarget[]> = {
-  overview:targetsFor(),learn:targetsFor(),project:targetsFor(),
+  overview:targetsFor(),learn:[{id:"start-here",title:"从这里开始",level:2},{id:"course-path",title:"后续学习路线",level:2},{id:"how-to-learn",title:"怎样跟着学习",level:2}],project:targetsFor(),
   "langchain-project":targetsFor(),"rag-project":targetsFor(),
 };
 
@@ -59,17 +60,21 @@ function sidebarFor(section: SiteSection): SiteSidebarGroup[] {
 /** Both tutorial and practice pages use the same sidebar structure. */
 export const sidebarGroups: Record<SiteSection, SiteSidebarGroup[]> = {
   overview: sidebarFor("overview"),
-  learn: sidebarFor("learn"),
+  learn: [
+    { title: "FastAPI 教程", links: [{title:"课程概览",href:"/learn"}] },
+    { title: "入门准备", links: fastapiChapters.map(chapter => ({title:chapter.title,href:chapterHref(chapter.slug)})) },
+    { title: "项目实践", links: sections.filter(section=>section.id!=="learn").map(({title,href})=>({title,href})) },
+  ],
   project: sidebarFor("project"),
   "langchain-project": sidebarFor("langchain-project"),
   "rag-project": sidebarFor("rag-project"),
 };
 
 /** Search covers actual course entry pages, without unpublished lesson chapters. */
-export const siteSearchEntries: SearchEntry[] = sitePages.map(({ id, title, href, description }) => ({
+export const siteSearchEntries: SearchEntry[] = [...sitePages.map(({ id, title, href, description }) => ({
   id: `site-${id}`,
   title,
   section: id === "overview" ? siteInfo.subtitle : "课程教学",
   summary: description,
   href,
-}));
+})), ...fastapiChapters.map(chapter => ({id:`fastapi-${chapter.id}`,title:chapter.title,section:"FastAPI 教程 · 入门准备",summary:chapter.summary,href:chapterHref(chapter.slug)}))];
