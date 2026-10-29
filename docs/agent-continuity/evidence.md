@@ -7,6 +7,7 @@
 - manual: Chrome对照基础/项目默认页面共享模板，截图及测量在docs/evidence/verification；没有发布旧教程或假章节。
 - file: `web/src/content/site.ts`：统一栏目导航；web/fixtures是新组件测试素材，无旧教程依赖；docs/planning/frontend-page-design.md是LC-DOCS-2.0。
 - cmd: `git push -u origin main`成功，`git ls-remote origin refs/heads/main`与本地5802aee1355c9216e93cdcacfbdc890aaa2ce458一致；旧教材/旧教学源码不在初始树。上传内容检查见cleanup-upload-audit.json。
+- manual: 初始提交的GitHub CI成功：run 40845850667，Node24 runner的npm ci、平台/构建/类型/共享路由/预览构建各步均success，链接在upload.json。
 - gap: 新教程未编写，禁用JS浏览器/学习者/PyCharm/完整部署等不由本轮框架结果代替.
 
 ## Historical (milestone evidence only)

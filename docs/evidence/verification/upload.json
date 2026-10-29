@@ -18,5 +18,19 @@
     "retired routes404",
     "upload content audit"
   ],
-  "scope": "Repository upload; no public site deployment and no new tutorial content"
+  "scope": "Repository upload; no public site deployment and no new tutorial content",
+  "firstCI": {
+    "status": "completed",
+    "conclusion": "success",
+    "commit": "5802aee1355c9216e93cdcacfbdc890aaa2ce458",
+    "url": "https://github.com/ban-code-art/ai-engineering-roadmap/actions/runs/40845850667",
+    "validated": [
+      "npm ci on Node24 runner",
+      "platform probe",
+      "default build",
+      "typecheck",
+      "shared routes and retired404",
+      "framework preview build"
+    ]
+  }
 }
