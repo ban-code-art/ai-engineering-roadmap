@@ -2,6 +2,8 @@
 
 ## Recent
 
+- file: platform-and-plain-language.md：F02/F03共12命令组默认WindowsPowerShell、三章生活类比、全局LC-DOCS-2.2；29检查/构建/类型通过，Chrome桌面键盘切换/独立状态与55字符复制匹配；教学源未改，新增手机浏览器核查未完成。
+
 - file: 最新展示改造bd1f8cf已推送，GitHub CI40870743773 success；reading-refresh.md及官方code-reading-audit.json记录28检查/build/typecheck/双模式路由、纯代码结构、源/hash不变、桌面手机/双主题及201字符复制匹配；LC-DOCS-2.1更新。
 
 - cmd: Python3.12.4干净Windows环境实际执行windows.ps1，pip安装14包锁、pip check/导入成功，错目录/解释器失败后恢复；9个unittest通过，详见fastapi-w01-labs.json。

@@ -1,6 +1,7 @@
 import type { DocTarget } from "@/lib/framework/types";
 import { DocsAccordion, DocsCallout, DocsSection } from "@/components/docs/document-primitives";
 import { LessonCode } from "@/components/docs/lesson-code";
+import { LessonCommands } from "@/components/docs/lesson-commands";
 import { LessonDiagram } from "@/components/docs/lesson-diagram";
 import { getSourceLinks } from "@/lib/course/sources";
 
@@ -22,49 +23,48 @@ export default function EnvironmentAndProjectRoot() {
   return <>
     <DocsCallout kind="info" title="前置与本章目标">
       <p>先读完 F01，知道接口以后需要一个运行中的服务端。本章先准备环境，运行现成的检查工具；普通 Python 语法在 F03 解释。</p>
-      <p>主线使用 Windows、PowerShell 和 PyCharm；macOS/Linux 的等价命令放在各步骤的展开项里。本章不需要启动 API 或安装数据库。</p>
+      <p>主线使用 Windows、PowerShell 和 PyCharm。命令默认显示“Windows · PowerShell”，macOS/Linux 用户切换到对应标签，每个步骤只执行自己系统的一份命令。本章不需要启动 API 或安装数据库。</p>
     </DocsCallout>
     <DocsSection id="install-python" title="准备 Python 与终端">
       <p><strong>Python 解释器</strong>是读取并执行 Python 程序的软件。这里使用 Python 3.12，同一小版本的补丁号可以不同。Windows 可从<a href="https://www.python.org/downloads/release/python-31210/" target="_blank" rel="noreferrer">Python 3.12.10 官方发布页</a>选择对应电脑架构的 Windows installer（常见为 64-bit）；安装时保留 Python Launcher（启动器）选项。</p>
       <p className="docs-caption">本批作者实际运行版本为 Python 3.12.4。检查工具接受 3.12 的补丁版本；3.12.10 提供 Windows 安装程序，后续仅源码的安全发布不能直接当 Windows 安装包使用。</p>
-      <p><strong>终端</strong>是输入文字命令的窗口；PowerShell 是负责理解这些命令的程序。打开 Windows Terminal 或 PowerShell，先只输入下面一行，不输入行号、提示符或讲解文字。</p>
+      <p><strong>终端</strong>是输入文字命令的窗口；PowerShell 是负责理解这些命令的程序。打开 Windows Terminal 时选择 PowerShell 标签页，或直接打开 PowerShell。这份 Windows 命令按 PowerShell 编写，不能与 cmd、Git Bash 的语法混用。</p>
+      <p>先只输入下面一行，不输入行号、提示符或讲解文字。查看版本不依赖当前目录，可以在刚打开的终端中运行。</p>
       <p><code>py</code>让 Windows 启动器选择 Python，<code>-3.12</code>指定 3.12，<code>--version</code>要求显示版本。空格分开命令和<strong>参数</strong>，参数用来告诉命令“具体怎样做”。</p>
-      <LessonCode id="f02-python-version" source="f02-windows" label="PowerShell · 查看版本" start={13} end={13} />
+      <LessonCommands id="f02-python-version" title="查看 Python 版本" windows={{source:"f02-windows",start:13,end:13}} posix={{source:"f02-posix",start:16,end:16}} />
       <p>应看到以 <code>Python 3.12.</code> 开头的版本号。如果提示找不到 <code>py</code>，先确认安装了启动器，然后关闭并重新打开终端；如果提示找不到 3.12，返回安装程序选择该版本。</p>
       <DocsAccordion title="macOS / Linux：确认 Python 3.12">
-        <p>安装方式取决于操作系统，可通过官方安装包或发行版支持的包管理器安装。先确认 <code>python3.12</code> 命令存在；这里不假设裸 <code>python</code> 已指向正确版本。</p>
-        <LessonCode id="f02-posix-version" source="f02-posix" label="终端 · 查看版本" start={16} end={16} />
+        <p>安装方式取决于操作系统，可通过官方安装包或发行版支持的包管理器安装。选择上方“macOS · Linux”标签，先确认 <code>python3.12</code> 命令存在；这里不假设裸 <code>python</code> 已指向正确版本。</p>
       </DocsAccordion>
     </DocsSection>
     <DocsSection id="project-root" title="建立项目根目录">
       <p><strong>当前工作目录</strong>是终端此刻所在的文件夹，简称 CWD。相对路径会从这里寻找文件；同一条命令换一个目录运行，可能找到不同的文件。</p>
+      <p>可以把它想成你此刻站着的房间：说“拿桌上的笔”，默认就在这间房找；换到另一间房，同一句话可能指向另一张桌子。命令里的相对路径也是从当前目录开始找，所以要先确认你“站在哪里”。</p>
       <p>我们在你的用户目录下新建 <code>fastapi-study</code>，把它作为<strong>项目根目录</strong>，也就是这次学习所有文件的起点。</p>
       <p><code>Set-Location</code>切换目录，<code>-LiteralPath</code>按原样使用路径；<code>$env:USERPROFILE</code>读取 Windows 给当前用户保存的主目录，例如 <code>C:\Users\Lin</code>。它不是 Python 代码。</p>
-      <LessonCode id="f02-parent-directory" source="f02-windows" label="PowerShell · 进入用户目录" start={6} end={6} />
-      <p><code>New-Item</code>创建一个条目；<code>-ItemType Directory</code>指定文件夹，<code>-Path fastapi-study</code>指定名字。下一行进入它，<code>Get-Location</code>显示当前路径。<code>Out-Null</code>只隐藏新建目录的打印信息，不影响创建结果。</p>
-      <LessonCode id="f02-create-root" source="f02-windows" label="PowerShell · 新建学习项目" start={8} end={10} />
+      <LessonCommands id="f02-parent-directory" title="进入用户目录" windows={{source:"f02-windows",start:6,end:6}} posix={{source:"f02-posix",start:6,end:6}} />
+      <p><code>New-Item</code>创建一个条目；<code>-ItemType Directory</code>指定文件夹，<code>-Path fastapi-study</code>指定名字。下一行进入它，<code>Get-Location</code>显示当前路径。<code>|</code>是 PowerShell 的<strong>管道</strong>，把前一个命令的输出交给后一个命令；这里交给 <code>Out-Null</code>，只隐藏创建成功后的打印信息，不影响目录创建。</p>
+      <LessonCommands id="f02-create-root" title="新建学习项目" windows={{source:"f02-windows",start:8,end:10}} posix={{source:"f02-posix",start:11,end:13}} />
       <p>最后的路径应以 <code>fastapi-study</code> 结尾。先预测：如果你接下来返回上一层再创建文件，文件还会落在项目根里吗？答案是否；先回到项目根，再继续。</p>
       <DocsCallout kind="note" title="已经有这个文件夹时">
         <p>先打开并查看里面的内容。可以继续使用自己的学习目录，或另起一个名字；不要删除已有文件。下面所有命令都要从你选择的项目根执行。</p>
       </DocsCallout>
       <DocsAccordion title="macOS / Linux：建立同样的目录">
-        <p><code>$HOME</code>表示当前用户的主目录，<code>cd</code>切换目录，<code>--</code>结束命令选项，后面按路径处理。<code>mkdir</code>创建文件夹，<code>pwd</code>显示当前路径。先进入你的主目录，再执行建目录的三行。</p>
-        <LessonCode id="f02-posix-parent" source="f02-posix" label="终端 · 进入用户目录" start={6} end={6} />
-        <LessonCode id="f02-posix-root" source="f02-posix" label="终端 · 新建学习项目" start={11} end={13} />
+        <p>选择上面两个命令组的“macOS · Linux”标签。<code>$HOME</code>表示当前用户的主目录，<code>cd</code>切换目录，<code>--</code>结束命令选项，后面按路径处理。<code>mkdir</code>创建文件夹，<code>pwd</code>显示当前路径。先进入主目录，再执行建目录的三行。</p>
       </DocsAccordion>
     </DocsSection>
     <DocsSection id="virtual-environment" title="创建独立环境">
       <p><strong>虚拟环境</strong>给这个项目提供一个独立的解释器入口和包安装位置。后面升级某个包时，变化会留在这个环境里，不会直接改变另一个项目的包。</p>
+      <p>可以把每个项目的虚拟环境看成各自的工具箱：这个项目换一把工具，不会把另一个项目箱里的工具也换掉。这里隔开的是 Python 依赖和解释器入口，不是另外一台完整电脑；项目文件仍放在你原来的磁盘上。</p>
       <p><code>-m</code>让解释器运行一个模块；模块可以先理解为 Python 可以加载的一份程序。<code>venv</code>是 Python 自带的环境创建工具，<code>.venv</code>是我们给目标文件夹起的名字。</p>
-      <LessonCode id="f02-create-venv" source="f02-windows" label="PowerShell · 在项目根创建环境" start={15} end={15} />
+      <LessonCommands id="f02-create-venv" title="在项目根创建虚拟环境" windows={{source:"f02-windows",start:15,end:15}} posix={{source:"f02-posix",start:17,end:17}} />
       <p>创建后根目录应多出 <code>.venv</code>。这里的 Python 入口是 <code>.venv\Scripts\python.exe</code>。下面的 <code>.\</code>表示“从当前目录开始找”，所以必须留在项目根。</p>
       <p><strong>pip</strong>是安装 Python 包的工具。用这个解释器运行 <code>-m pip</code>，可以明确把包安装到同一个环境；先查看它的位置。</p>
-      <LessonCode id="f02-pip-location" source="f02-windows" label="PowerShell · 检查 pip 位置" start={19} end={19} />
+      <p>沿用工具箱的例子，pip 像负责领取工具的助手：先告诉它服务哪个箱子，再把工具放进去。代码里用哪个环境的 Python 执行 <code>-m pip</code>，pip 就为哪个环境安装；因此不只写一个可能指向其他环境的 <code>pip</code>。</p>
+      <LessonCommands id="f02-pip-location" title="检查项目环境中的 pip" windows={{source:"f02-windows",start:19,end:19}} posix={{source:"f02-posix",start:20,end:20}} />
       <p>输出中的路径应位于这个项目的 <code>.venv</code> 内。我们始终写完整的环境入口，不需要先执行激活脚本，也不需要修改 PowerShell 执行策略。</p>
       <DocsAccordion title="macOS / Linux：环境入口不同">
-        <p>环境创建命令仍使用 <code>-m venv</code>，解释器入口位于 <code>.venv/bin/python</code>。</p>
-        <LessonCode id="f02-posix-venv" source="f02-posix" label="终端 · 创建环境" start={17} end={17} />
-        <LessonCode id="f02-posix-pip" source="f02-posix" label="终端 · 查看 pip" start={20} end={20} />
+        <p>选择上面命令组的“macOS · Linux”标签。环境创建命令仍使用 <code>-m venv</code>，解释器入口位于 <code>.venv/bin/python</code>；<code>./</code>同样表示从当前目录开始找。两种系统的包安装方式相同，解释器路径不同。</p>
       </DocsAccordion>
     </DocsSection>
     <DocsSection id="install-packages" title="安装哪些包">
@@ -78,24 +78,18 @@ export default function EnvironmentAndProjectRoot() {
       <LessonCode id="f02-direct-requirements" source="f02-requirements" label="requirements.txt · 直接依赖" />
       <p><code>==</code>在这个文本文件中表示固定版本。FastAPI 还会安装它依赖的工具，因此完整环境需要更多包。请打开<a href={lock.file} target="_blank" rel="noreferrer">本章 requirements.lock.txt ↗</a>，在 GitHub 点击 Raw，把完整文本保存到项目根，文件名保持原样。</p>
       <p><code>install</code>是 pip 的安装动作，<code>-r</code>表示从指定文件读取包清单。先确认文件确实位于项目根，再执行：</p>
-      <LessonCode id="f02-install-lock" source="f02-windows" label="PowerShell · 安装本批依赖" start={23} end={23} />
+      <LessonCommands id="f02-install-lock" title="从项目根安装本批依赖" windows={{source:"f02-windows",start:23,end:23}} posix={{source:"f02-posix",start:23,end:23}} />
       <p>如果连接失败，修复网络后重试同一条命令。成功后会显示安装结果或已满足依赖；包不是安装到教程网站里，而是安装到你本地的环境里。</p>
-      <DocsAccordion title="macOS / Linux：安装清单">
-        <LessonCode id="f02-posix-install" source="f02-posix" label="终端 · 安装本批依赖" start={23} end={23} />
-      </DocsAccordion>
     </DocsSection>
     <DocsSection id="check-environment" title="保存文件并检查">
       <p>打开<a href={check.file} target="_blank" rel="noreferrer">check_environment.py 固定源码 ↗</a>，通过 Raw 保存完整文件到项目根。<code>.py</code>是 Python 文件的扩展名；Windows 资源管理器开启“查看 → 显示 → 文件扩展名”，确认没有变成 <code>check_environment.py.txt</code>。</p>
       <p>此时根目录应有 <code>.venv</code>、<code>requirements.lock.txt</code> 和 <code>check_environment.py</code>。保存（<kbd>Ctrl + S</kbd>）后，使用环境解释器运行这个现成检查工具：</p>
-      <LessonCode id="f02-run-check" source="f02-windows" label="PowerShell · 检查目录、环境和导入" start={27} end={27} />
+      <LessonCommands id="f02-run-check" title="从项目根运行环境检查" windows={{source:"f02-windows",start:27,end:27}} posix={{source:"f02-posix",start:24,end:24}} />
       <p>程序会打印当前目录、实际 Python 入口和三个包的版本。路径因机器而异，最后应看到 <code>OK: project directory, interpreter and imports agree</code>。只有显示这行，才继续下一章。</p>
       <p>检查工具导入了 <code>fastapi</code>、<code>uvicorn</code> 和 <code>pydantic</code>来确认它们能被当前解释器找到。它会在目录、环境或导入不一致时退出；退出不等于启动或停止一个 API。</p>
       <DocsAccordion title="查看完整检查工具：供恢复核对">
         <p>当前按完整文件使用，不要求修改它。下一章先学习普通脚本需要的语法，检查工具里的路径与异常处理会在后续需要时解释。</p>
         <LessonCode id="f02-complete-check" source="f02-check" label="check_environment.py · 完整恢复文件" />
-      </DocsAccordion>
-      <DocsAccordion title="macOS / Linux：运行检查工具">
-        <LessonCode id="f02-posix-check" source="f02-posix" label="终端 · 检查环境" start={24} end={24} />
       </DocsAccordion>
     </DocsSection>
     <DocsSection id="pycharm-interpreter" title="让 PyCharm 对齐">

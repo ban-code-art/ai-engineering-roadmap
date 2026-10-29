@@ -17,7 +17,8 @@ export function exportDocumentText(node:ReactNode,options:{excludeTypes?:unknown
       const sample=props.samples.find(s=>s.id===props.defaultSampleId)??props.samples[0];
       if(!sample||seen.has(sample.code))return '';
       seen.add(sample.code);
-      return `${props.title??sample.label}\n${sample.code}`;
+      const label=props.title&&props.title!==sample.label?`${props.title} · ${sample.label}`:sample.label;
+      return `${label}\n${sample.code}`;
     }
     if(props.items)return props.items.map((item,index)=>`${index+1}. ${item.title}\n${visit(item.body)}`).join('\n\n');
     const contents=Children.toArray(props.children).map(visit).join(typeof value.type==='string'&&['p','code','strong','span','a'].includes(value.type)?'':'\n');

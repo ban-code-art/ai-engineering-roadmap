@@ -9,6 +9,7 @@ format: resume-project-context/v1
 ## Scope
 
 - 当前批次 W01：F01 HTTP 请求与响应、F02 环境与项目根、F03 必要 Python，三个独立 /learn/fastapi 页面。
+- 最新补充要求：Windows命令明确可见；专业术语同时配白话与必要生活例子，写入全局设计且后续章节沿用。
 - 官方知识依据与LangChain文档组织、每章概念解释/操作/配图/源码计划、固定GitHub链接/恢复规则、小批次写作顺序。
 - 同步设计入口/职责/接续与设计审阅证据。
 

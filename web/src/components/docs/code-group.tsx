@@ -9,6 +9,8 @@ interface CodeGroupProps {
   samples: CodeSample[];
   title?: string;
   defaultSampleId?: string;
+  tabsLabel?: string;
+  alternativesLabel?: string;
 }
 
 function SampleCode({ sample }: { sample: CodeSample }) {
@@ -49,7 +51,7 @@ function SourceReference({ sample }: { sample: CodeSample }) {
   </div>;
 }
 
-export function CodeGroup({ id, samples, title, defaultSampleId }: CodeGroupProps) {
+export function CodeGroup({ id, samples, title, defaultSampleId, tabsLabel, alternativesLabel }: CodeGroupProps) {
   const initialSample = samples.find((sample) => sample.id === defaultSampleId) ?? samples[0];
   const [selectedId, setSelectedId] = useState(initialSample?.id ?? "");
   const [enhanced, setEnhanced] = useState(false);
@@ -80,7 +82,7 @@ export function CodeGroup({ id, samples, title, defaultSampleId }: CodeGroupProp
 
   return (
     <div id={id} className="docs-code-example" data-enhanced={enhanced} data-active-sample={selectedSample.id}>
-      {samples.length > 1 && <div className="docs-code-tabs" role="tablist" aria-label={title ? `${title}版本` : "代码版本"} aria-orientation="horizontal">
+      {samples.length > 1 && <div className="docs-code-tabs" role="tablist" aria-label={tabsLabel ?? (title ? `${title}版本` : "代码版本")} aria-orientation="horizontal">
         {samples.map((sample, index) => (
           <button
             key={sample.id}
@@ -118,7 +120,7 @@ export function CodeGroup({ id, samples, title, defaultSampleId }: CodeGroupProp
       <SourceReference sample={selectedSample} />
       {samples.length > 1 && (
         <details className="docs-code-fallback">
-          <summary>查看其他版本</summary>
+          <summary>{alternativesLabel ?? "查看其他版本"}</summary>
           {samples.filter((sample) => sample.id !== selectedSample.id).map((sample) => (
             <div className="docs-code-fallback-sample" key={sample.id}>
               <p className="docs-code-fallback-label">{sample.label}</p>

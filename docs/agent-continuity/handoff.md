@@ -3,7 +3,7 @@
 ## Snapshot
 
 - Goal: 依据FA-CURRICULUM-1.0逐批写通俗、独立页面的FastAPI基础课，长期完成TaskBoard API demo。
-- Progress: W01最新展示改造已推送bd1f8cf：代码区纯代码/框后来源、局部重点行、蓝灰阅读面/少量对照与导航卡片，LC-DOCS-2.1；28前端检查/构建/类型/路由、桌面手机/双主题通过。源码A739a064和15文件hash继续固定，教学源未改。
+- Progress: 最新Windows/通俗理解补充完成：F02/F03共12组系统命令默认PowerShell，F01–F03生活类比回到准确机制；全局设计LC-DOCS-2.2，29检查/构建/类型与桌面切换/复制通过，待本次同步。2.1纯代码/配色保留，源码A739a064与15文件hash未改。
 - Next: 本批结束；下次从W02/F04–F06首接口创建/启动/排错校准开始。
 
 ## Read First
@@ -26,7 +26,7 @@
 
 ## Last Interaction
 
-- 用户最新要求清理代码框重复文件/版本/源码信息，代码优先；减少大片白色和单调，继续参考LangChain文档层次。改造证据见docs/evidence/verification/reading-refresh.md，后续写作使用2.1。
+- 用户最新要求Windows命令明确可见，专业词汇配白话解释和生活例子，写入全局规范，后续章节沿用；证据见platform-and-plain-language.md。后续写作使用2.2，保持2.1视觉。
 
 ## Continue From
 
