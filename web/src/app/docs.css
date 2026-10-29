@@ -50,7 +50,7 @@ html:has(.docs-frame) {scrollbar-gutter:stable;}
 .docs-theme-menu button {background:transparent;border:0;font-size:13px;padding:8px 10px;border-radius:7px;width:100%;display:flex;justify-content:space-between;}
 .docs-theme-menu button:hover,.docs-theme-menu button[aria-pressed="true"] {background:var(--docs-selected);}
 .docs-product-nav {height:40px;display:flex;align-items:stretch;gap:24px;max-width:1472px;padding:0 20px;margin:auto;font-size:14px;}
-.docs-product-nav a {display:flex;align-items:center;border-bottom:1px solid transparent;}
+.docs-product-nav a {display:flex;align-items:center;border-bottom:1px solid transparent;white-space:nowrap;}
 .docs-product-nav a[aria-current="page"] {font-weight:600;border-bottom-color:var(--docs-primary);}
 .docs-mobile-path {display:none;}
 .docs-body {max-width:1472px;margin:auto;padding:0 20px;display:flex;}

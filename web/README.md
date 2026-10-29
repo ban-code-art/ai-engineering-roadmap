@@ -1,6 +1,6 @@
 # Web文档框架
 
-基础教程(`/learn`)与项目实践(`/project`)使用同一个DocsShell和全站样式；当前内容待重新编写。没有legacy外壳、旧课或教程业务源码依赖。
+四类课程入口共用DocsShell和全站样式：FastAPI教程(`/learn`)、FastAPI项目实战(`/project`)、LangChain项目实战(`/project/langchain`)、RAG项目实战(`/project/rag`)。当前内容待重新编写，没有legacy外壳、旧课或教程业务源码依赖。
 
 ## 运行
 

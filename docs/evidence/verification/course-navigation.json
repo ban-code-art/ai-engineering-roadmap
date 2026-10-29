@@ -1,0 +1,78 @@
+{
+  "date": "2026-10-29",
+  "status": "pass",
+  "checks": [
+    {
+      "active": [
+        "FastAPI 教程"
+      ],
+      "clientWidth": 1440,
+      "h1": "FastAPI 教程",
+      "path": "/learn",
+      "scrollWidth": 1425,
+      "section": "learn",
+      "tabs": [
+        "FastAPI 教程",
+        "FastAPI 项目实战",
+        "LangChain 项目实战",
+        "RAG 项目实战"
+      ]
+    },
+    {
+      "active": [
+        "FastAPI 项目实战"
+      ],
+      "clientWidth": 1440,
+      "h1": "FastAPI 项目实战",
+      "path": "/project",
+      "scrollWidth": 1425,
+      "section": "project",
+      "tabs": [
+        "FastAPI 教程",
+        "FastAPI 项目实战",
+        "LangChain 项目实战",
+        "RAG 项目实战"
+      ]
+    },
+    {
+      "active": [
+        "LangChain 项目实战"
+      ],
+      "clientWidth": 1440,
+      "h1": "LangChain 项目实战",
+      "path": "/project/langchain",
+      "scrollWidth": 1425,
+      "section": "langchain-project",
+      "tabs": [
+        "FastAPI 教程",
+        "FastAPI 项目实战",
+        "LangChain 项目实战",
+        "RAG 项目实战"
+      ]
+    },
+    {
+      "active": [
+        "RAG 项目实战"
+      ],
+      "clientWidth": 1440,
+      "h1": "RAG 项目实战",
+      "path": "/project/rag",
+      "scrollWidth": 1425,
+      "section": "rag-project",
+      "tabs": [
+        "FastAPI 教程",
+        "FastAPI 项目实战",
+        "LangChain 项目实战",
+        "RAG 项目实战"
+      ]
+    },
+    {
+      "clientWidth": 375,
+      "h1": "FastAPI 教程",
+      "scenario": "mobile",
+      "scrollWidth": 375,
+      "width": 390
+    }
+  ],
+  "scope": "Course entry navigation only; no tutorial content authored"
+}

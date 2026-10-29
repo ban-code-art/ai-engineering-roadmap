@@ -5,7 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { SearchDialog } from "./search-dialog";
 import { TableOfContents } from "./table-of-contents";
-import { sections, sidebarGroups, siteInfo, type SiteSection, type SiteSidebarGroup } from "@/content/site";
+import { sections, sitePages, sidebarGroups, siteInfo, type SiteSection, type SiteSidebarGroup } from "@/content/site";
 import type { DocTarget, SearchEntry } from "@/lib/framework/types";
 
 const previewGroups: SiteSidebarGroup[] = [
@@ -38,7 +38,7 @@ export function DocsShell({ children, targets, searchEntries, section = "preview
   const [theme, setTheme] = useState<Theme>("system");
   const [active, setActive] = useState(targets[0]?.id ?? "");
   const isPreview = section === "preview";
-  const currentSection = sections.find((item) => item.id === section);
+  const currentSection = sitePages.find((item) => item.id === section);
   const currentPath = pathname ?? currentSection?.href ?? "/framework-preview";
   const currentTitle = title ?? currentSection?.title ?? "框架概览";
   const groups = isPreview ? previewGroups : sidebarGroups[section];
@@ -200,8 +200,7 @@ export function DocsShell({ children, targets, searchEntries, section = "preview
         </div>
       </div>
       <nav className="docs-product-nav" aria-label="栏目">
-        {isPreview && <a href="#introduction" aria-current="page">文档框架</a>}
-        {sections.map((item) => <Link key={item.id} href={item.href} aria-current={currentPath === item.href ? "page" : undefined}>{item.title}</Link>)}
+        {sections.map((item) => <Link key={item.id} href={item.href} aria-current={section === item.id ? "page" : undefined}>{item.title}</Link>)}
       </nav>
       <div className="docs-mobile-path">
         <button ref={trigger} type="button" onClick={openMenu} aria-label="打开导航" aria-haspopup="dialog">
@@ -226,8 +225,10 @@ export function DocsShell({ children, targets, searchEntries, section = "preview
           <footer className="docs-footer">
             <div><strong>{siteInfo.name}</strong><p>学习路线 · 内容待编写</p></div>
             <nav aria-label="页尾">
-              <Link href="/learn">基础教程 ↗</Link>
-              <Link href="/project">项目实践 ↗</Link>
+              <Link href="/learn">FastAPI 教程 ↗</Link>
+              <Link href="/project">FastAPI 项目实战 ↗</Link>
+              <Link href="/project/langchain">LangChain 项目实战 ↗</Link>
+              <Link href="/project/rag">RAG 项目实战 ↗</Link>
               <a href={siteInfo.repositoryUrl} target="_blank" rel="noreferrer">GitHub 源码 ↗</a>
             </nav>
           </footer>

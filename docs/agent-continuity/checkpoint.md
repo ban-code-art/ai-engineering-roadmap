@@ -12,7 +12,7 @@
 
 ## Active Step
 
-- 结构/模板整理与首次上传完成，初始提交5802aee1355c9216e93cdcacfbdc890aaa2ce458已推送远程main并核对一致。
+- 已完成顶部四类课程入口：/learn、/project、/project/langchain、/project/rag，旧概览/通用分类退出顶部；首页仍可通过品牌/侧栏进入。构建、17测试、类型、五条路由和Chrome逐项高亮检查通过，准备同步本轮修改。
 
 ## Remaining
 

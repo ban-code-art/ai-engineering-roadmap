@@ -4,7 +4,7 @@
 
 | 目录 | 职责 |
 | --- | --- |
-| web/src/app | 首页/基础/项目路由；内部组件预览与404 |
+| web/src/app | 首页、FastAPI教程/实战、LangChain实战、RAG实战；内部组件预览与404 |
 | web/src/components/docs | 统一外壳、连续章节、代码/提示、搜索、目录、图/文件组件 |
 | web/src/content/site.ts | 栏目、有效入口、标题与导航数据 |
 | web/src/lib/framework | 最少类型、注册/检索/hash、受控文本导出、高亮与样例加载 |

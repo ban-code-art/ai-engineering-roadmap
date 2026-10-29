@@ -2,13 +2,11 @@
 
 ## Recent (last 3-5 verifications or current milestone)
 
-- cmd: `cd web; npm run build`与`npm run build:framework`：均exit0，15项框架测试通过，正式/预览standalone分别产生；平台探针与typecheck通过。
-- cmd: `node scripts/verify-site.mjs`及`--preview`：三条入口200且同DocsShell，旧首接口/未编写阶段404，默认预览404/显式预览200，106本地字体存在。
-- manual: Chrome对照基础/项目默认页面共享模板，截图及测量在docs/evidence/verification；没有发布旧教程或假章节。
-- file: `web/src/content/site.ts`：统一栏目导航；web/fixtures是新组件测试素材，无旧教程依赖；docs/planning/frontend-page-design.md是LC-DOCS-2.0。
-- cmd: `git push -u origin main`成功，`git ls-remote origin refs/heads/main`与本地5802aee1355c9216e93cdcacfbdc890aaa2ce458一致；旧教材/旧教学源码不在初始树。上传内容检查见cleanup-upload-audit.json。
-- manual: 初始提交的GitHub CI成功：run 40845850667，Node24 runner的npm ci、平台/构建/类型/共享路由/预览构建各步均success，链接在upload.json。
-- gap: 新教程未编写，禁用JS浏览器/学习者/PyCharm/完整部署等不由本轮框架结果代替.
+- cmd: 本轮默认/预览build与TypeScript通过；17框架测试含四类课程与搜索入口契约通过。
+- cmd: verify-site正式/预览检查五条入口200、各页顶部四个标签/标题/section一致、旧课404及本地资源通过。
+- manual: Chrome逐个点击四个顶部标签，页面H1和唯一当前高亮一致；390px无整页横向溢出，记录course-navigation.json与course-navigation.png。
+- file: `web/src/content/site.ts`：顶部sections只含四类课程，sitePages含首页，侧栏/搜索以同登记数据生成；新增两个实战页共享SectionLanding。
+- gap: 当前只有课程入口，新教材/初学者/PyCharm/无JS及完整部署仍未验收；不能用导航修改结果代替教学完成。
 
 ## Historical (milestone evidence only)
 

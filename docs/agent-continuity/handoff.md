@@ -3,7 +3,7 @@
 ## Snapshot
 
 - Goal: 保留统一LangChain风格框架，基础/项目共用模板；丢弃旧教程，上传新仓库后重新编写。
-- Progress: 清理后的统一框架已上传ban-code-art/ai-engineering-roadmap；初始提交5802aee，远程main一致，旧教程未进入Git历史。
+- Progress: 清理框架已上传；顶部已按四个课程分类，新增LangChain/RAG实战入口，搜索/标题/侧栏/页尾一致，各入口仍未发布章节。
 - Next: 按docs/planning/roadmap.md重新设计首批基础教程与配套项目实践，同一模板从零编写。
 
 ## Read First
@@ -26,9 +26,9 @@
 
 ## Last Interaction
 
-- 用户创建ai-engineering-roadmap仓库，要求清理/上传；补充基础和项目共用LangChain模板，并明确不要保留现有教程，后续重新编写。
+- 用户要求顶部改为FastAPI教程、FastAPI项目实战、LangChain项目实战、RAG项目实战；已实现入口和共享导航，未写课程正文。
 
 ## Continue From
 
-- 新教程从零设计/编写，使用已保留的统一框架；当前正式/learn和/project仅有编写状态。
+- 新教程从零设计/编写，统一框架已提供四类课程入口；site.ts维护顶部sections与包含首页的sitePages，不能删除首页登记或用/project前缀误选其他实战。
 - 代码源、框架fixture和正式内容需分别维护，引用真实新源码并逐批验收。

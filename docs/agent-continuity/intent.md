@@ -4,7 +4,7 @@ format: resume-project-context/v1
 
 ## Requested Outcome
 
-- 清理项目并上传到ban-code-art/ai-engineering-roadmap。用户明确不保留旧教程，后续重新编写；基础教程和项目实践共同使用LangChain风格文档模板。
+- 当前按用户要求将顶部分类改为FastAPI教程、FastAPI项目实战、LangChain项目实战、RAG项目实战，同步课程入口/搜索/侧栏并更新仓库。旧教材继续不保留，新内容后续编写。
 
 ## Scope
 

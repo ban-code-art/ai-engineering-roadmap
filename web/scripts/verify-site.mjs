@@ -13,11 +13,26 @@ for(let attempt=0;attempt<30;attempt++) {
 }
 assert.ok(connected,`Site did not start: ${base}`);
 const routes=[];
-for(const path of ['/','/learn','/project']) {
+const courseRoutes = [
+  {path:'/learn',title:'FastAPI 教程',section:'learn'},
+  {path:'/project',title:'FastAPI 项目实战',section:'project'},
+  {path:'/project/langchain',title:'LangChain 项目实战',section:'langchain-project'},
+  {path:'/project/rag',title:'RAG 项目实战',section:'rag-project'},
+];
+for(const path of ['/',...courseRoutes.map(course=>course.path)]) {
   const response=await fetch(base+path,{signal:AbortSignal.timeout(10000)});
   assert.equal(response.status,200,path);
   const html=await response.text();
   assert.ok(html.includes('docs-frame'),`${path} must share the documentation template`);
+  const course = courseRoutes.find(course=>course.path===path);
+  if(course) {
+    assert.ok(html.includes(`<h1>${course.title}</h1>`),`${path} must show its course title`);
+    assert.ok(html.includes(`data-docs-section="${course.section}"`),`${path} must select its own course section`);
+  }
+  const navbar = html.match(/<nav class="docs-product-nav"[\s\S]*?<\/nav>/)?.[0];
+  assert.ok(navbar,`${path} missing course navigation`);
+  for(const course of courseRoutes)assert.ok(navbar.includes(course.title)&&navbar.includes(`href="${course.path}"`),`${path} missing ${course.title} tab`);
+  assert.ok(!navbar.includes('路线概览')&&!navbar.includes('>基础教程<')&&!navbar.includes('>项目实践<'),`${path} retained old navigation categories`);
   if(path!=='/')assert.ok(html.includes('重新编写')||html.includes('待编写'),`${path} must state the empty content status`);
   assert.ok(!html.includes('/learn/06-first-api'),`Retired lesson link in ${path}`);
   const assets=new Set([...html.matchAll(/(?:src|href)="(\/_next\/static\/[^\"]+|\/fonts\/[^\"]+)"/g)].map(m=>m[1].replaceAll('&amp;','&')));
