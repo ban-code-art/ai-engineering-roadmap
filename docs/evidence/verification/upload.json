@@ -1,0 +1,22 @@
+{
+  "date": "2026-10-29",
+  "status": "uploaded",
+  "repository": "https://github.com/ban-code-art/ai-engineering-roadmap",
+  "branch": "main",
+  "initialCommit": "5802aee1355c9216e93cdcacfbdc890aaa2ce458",
+  "remoteVerified": true,
+  "oldTutorialsIncluded": false,
+  "sharedTemplateRoutes": [
+    "/learn",
+    "/project"
+  ],
+  "localChecks": [
+    "15 framework tests",
+    "default and preview builds",
+    "TypeScript",
+    "shared shell routes and local assets",
+    "retired routes404",
+    "upload content audit"
+  ],
+  "scope": "Repository upload; no public site deployment and no new tutorial content"
+}

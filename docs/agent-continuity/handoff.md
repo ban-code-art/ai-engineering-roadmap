@@ -3,8 +3,8 @@
 ## Snapshot
 
 - Goal: 保留统一LangChain风格框架，基础/项目共用模板；丢弃旧教程，上传新仓库后重新编写。
-- Progress: 项目结构已清理，旧教材/教学业务/旧前端退出；三条正式入口与独立fixtures已验证，准备初始提交上传。
-- Next: 完成远程提交核对后，按docs/planning/roadmap.md重新设计首批内容。
+- Progress: 清理后的统一框架已上传ban-code-art/ai-engineering-roadmap；初始提交5802aee，远程main一致，旧教程未进入Git历史。
+- Next: 按docs/planning/roadmap.md重新设计首批基础教程与配套项目实践，同一模板从零编写。
 
 ## Read First
 
@@ -19,7 +19,7 @@
 
 ## Current Risks
 
-- 上传前本地尚无Git提交，远程仓库为空；完成后以远程main验证结果为准。
+- Git已建立初始main历史和origin远程，后续保留历史；不要再次初始化或强推。
 - 标题Manrope是明确字体差异，TWK不再分发。
 - 当前只交付空内容入口和模板，新教程/学习效果未完成；禁用JS完整浏览器实测与远程部署尚未验收。
 - Node服务监听本地3000/3001；重建前停止对应任务服务，避免Windows锁住输出目录。
