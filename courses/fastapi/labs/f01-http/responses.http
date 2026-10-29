@@ -1,0 +1,12 @@
+# 教学示意：并非真实运行结果。A 对应 requests.http 中的 /hello 请求。
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+{"message": "Hello Lin"}
+
+###
+# B 对应 /missing 请求；服务器已响应，但找不到对应资源。
+HTTP/1.1 404 Not Found
+Content-Type: application/json
+
+{"detail": "Not Found"}

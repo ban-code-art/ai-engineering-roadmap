@@ -1,0 +1,12 @@
+# 教学示意：本章只阅读，不发送；目前没有本地服务器。
+# 请求 A：方法 GET，路径 /hello，查询 name=Lin；GET 通常没有正文。
+GET /hello?name=Lin HTTP/1.1
+Host: 127.0.0.1:8000
+Accept: application/json
+
+###
+# 请求 B：只改变路径；对应 responses.http 中的 404 示意。
+GET /missing HTTP/1.1
+Host: 127.0.0.1:8000
+Accept: application/json
+
