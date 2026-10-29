@@ -3,12 +3,12 @@
 ## Snapshot
 
 - Goal: 依据FA-CURRICULUM-1.0逐批写通俗、独立页面的FastAPI基础课，长期完成TaskBoard API demo。
-- Progress: Windows/通俗理解补充已推送988c0a6，CI40873591725 success：12命令组默认PowerShell，三章生活类比回到准确机制；LC-DOCS-2.2、29检查/构建/类型和桌面切换/复制通过。2.1纯代码/配色保留，源码A739a064与15文件hash未改。
+- Progress: W01与Windows/通俗理解补充已发布，CI40873591725 success。本轮长期规范已整理验证：AGENTS必读链和默认自动遵循，教学/页面/固定源/逐批检查表明确归档；旧页面描述统一2.2。46本地链接与章节锚点有效、独立审阅通过，只改Markdown，实现和教学源未改。
 - Next: 本批结束；下次从W02/F04–F06首接口创建/启动/排错校准开始。
 
 ## Read First
 
-- DESIGN.md唯一设计入口，fastapi-curriculum.md唯一课程脉络；writing-standard.md负责解释/图/固定源。
+- 根AGENTS.md规定默认必读链；DESIGN.md唯一设计入口，writing-standard.md负责教学/逐批检查，frontend-page-design.md负责页面，fastapi-curriculum.md负责课程脉络。后续用户不重复要求也自动遵循。
 - docs/evidence/verification/fastapi-w01-review.md及labs.json/diagrams.md是本批证据，checkpoint与evidence列最后验证。
 
 ## Do Not Change
@@ -26,7 +26,7 @@
 
 ## Last Interaction
 
-- 用户最新要求Windows命令明确可见，专业词汇配白话解释和生活例子，写入全局规范，后续章节沿用；证据见platform-and-plain-language.md。后续写作使用2.2，保持2.1视觉。
+- 用户要求将此前教学/页面要求统一归档，后续不用再次提醒也默认执行；本轮整理规则与自动读取入口，不新增教程。Windows/通俗理解已发布证据仍见platform-and-plain-language.md；后续使用2.2。
 
 ## Continue From
 

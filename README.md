@@ -57,6 +57,8 @@ courses/fastapi/      新lab、依赖锁、验证脚本与固定源manifest
 
 后续先按[DESIGN.md](DESIGN.md)及[页面设计](docs/planning/frontend-page-design.md)设计首批任务，再分批编写新教程与真实源码。两类教程使用同一字体、颜色、布局、代码与提示系统。学习页使用受控TSX，不解析Markdown/MDX，不依赖付费文档平台或教程API在线。
 
+[AGENTS.md](AGENTS.md)登记每次工作的必读链；[写作规范](docs/planning/writing-standard.md)维护长期教学规则与逐批检查表。Windows命令、专业词汇配白话/生活例子、短代码、认真绘图、纯代码框与统一页面规则默认持续生效，后续请求无需再次列出。
+
 执行 `npm.cmd test`、`npm.cmd run build` 和 `npm.cmd run typecheck`；运行服务后在web目录执行 `npm.cmd run verify:site` 检查首页、四个课程入口、三章、未发布/旧课404与本地资源。Python 配套源验证见 [courses/fastapi/README.md](courses/fastapi/README.md)。作者运行、浏览器与真实学习者跟做分别记录，详见 [W01 核查](docs/evidence/verification/fastapi-w01-review.md)。
 
 标题使用开源Manrope，正文Inter、代码IBM Plex Mono与中文Noto Sans SC。字体来源、许可和与官方TWK字族的差异见[记录](docs/evidence/langchain-reference/font-assets.json)，许可随资源交付。

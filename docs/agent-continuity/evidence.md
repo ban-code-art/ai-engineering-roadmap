@@ -2,6 +2,8 @@
 
 ## Recent
 
+- cmd: 长期规范归档检查通过：46个本地文档链接/章节锚点有效，改动仅Markdown，web/src/web/tests/courses/fastapi diff为空；独立审阅确认默认读取/教学/页面/源码与只读章边界一致，git diff --check通过。本轮未改运行实现，无需重跑构建。
+
 - file: platform-and-plain-language.md：988c0a6已推送、CI40873591725 success；12命令组默认WindowsPowerShell、三章生活类比、LC-DOCS-2.2；29检查/构建/类型通过，桌面键盘切换/独立状态/55字符复制匹配，教学源未改。新增手机浏览器核查未完成。
 
 - file: 最新展示改造bd1f8cf已推送，GitHub CI40870743773 success；reading-refresh.md及官方code-reading-audit.json记录28检查/build/typecheck/双模式路由、纯代码结构、源/hash不变、桌面手机/双主题及201字符复制匹配；LC-DOCS-2.1更新。

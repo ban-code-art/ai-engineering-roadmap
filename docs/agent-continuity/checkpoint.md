@@ -10,7 +10,7 @@
 
 ## Active Step
 
-- Windows命令和通俗讲解已推送988c0a6，CI40873591725的web/labs均success：12组操作默认PowerShell、可切POSIX，生活类比映射回代码；LC-DOCS-2.2/AGENTS更新，29检查/构建/类型、桌面切换/复制通过。本轮结束，不开始W02。
+- 本轮长期规范已整理并核验：根/web/courses AGENTS设置必读链和默认自动执行，DESIGN总原则、写作规范逐批检查表和页面规范各司其职；清理旧样式与状态冲突。46个本地链接/章节锚点有效，独立审阅通过，仅修改Markdown，实现与教学源未改。本轮结束，不开始W02。
 
 ## Remaining
 
