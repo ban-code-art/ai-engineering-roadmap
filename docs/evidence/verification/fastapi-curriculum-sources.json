@@ -1,0 +1,96 @@
+{
+  "date": "2026-10-29",
+  "scope": "source review for curriculum design; no package/version execution",
+  "sources": [
+    {
+      "name": "first-steps",
+      "url": "https://raw.githubusercontent.com/fastapi/fastapi/master/docs/en/docs/tutorial/first-steps.md",
+      "status": "read",
+      "sha256": "ecc419c9e4ccf1e996db0b196301aab93a8f43d52ddc59a180d4e88f8290c858",
+      "headings": [
+        "### Check it { #check-it }",
+        "### Interactive API docs { #interactive-api-docs }",
+        "### Alternative API docs { #alternative-api-docs }",
+        "### OpenAPI { #openapi }",
+        "### Configure the app `entrypoint` in `pyproject.toml` { #configure-the-app-entrypoint-in-pyproject-toml }",
+        "### `fastapi dev` with path or with `--entrypoint` CLI option { #fastapi-dev-with-path-or-with-entrypoint-cli-option }",
+        "### Deploy your app (optional) { #deploy-your-app-optional }",
+        "## Recap, step by step { #recap-step-by-step }",
+        "### Step 1: import `FastAPI` { #step-1-import-fastapi }",
+        "### Step 2: create a `FastAPI` \"instance\" { #step-2-create-a-fastapi-instance }",
+        "### Step 3: create a *path operation* { #step-3-create-a-path-operation }",
+        "### Step 4: define the **path operation function** { #step-4-define-the-path-operation-function }",
+        "### Step 5: return the content { #step-5-return-the-content }",
+        "### Step 6: Deploy it { #step-6-deploy-it }",
+        "## Recap { #recap }"
+      ]
+    },
+    {
+      "name": "dependencies",
+      "url": "https://raw.githubusercontent.com/fastapi/fastapi/master/docs/en/docs/tutorial/dependencies/index.md",
+      "status": "read",
+      "sha256": "83319cc87297bb0959c5721a112133e6a3cd19900163c348a8ee6cf4818cd21f",
+      "headings": [
+        "## What is \"Dependency Injection\" { #what-is-dependency-injection }",
+        "## First Steps { #first-steps }",
+        "### Create a dependency, or \"dependable\" { #create-a-dependency-or-dependable }",
+        "### Import `Depends` { #import-depends }",
+        "### Declare the dependency, in the \"dependant\" { #declare-the-dependency-in-the-dependant }",
+        "## Share `Annotated` dependencies { #share-annotated-dependencies }",
+        "## To `async` or not to `async` { #to-async-or-not-to-async }",
+        "## Integrated with OpenAPI { #integrated-with-openapi }",
+        "## Simple usage { #simple-usage }",
+        "## **FastAPI** plug-ins { #fastapi-plug-ins }",
+        "## **FastAPI** compatibility { #fastapi-compatibility }",
+        "## Simple and Powerful { #simple-and-powerful }",
+        "## Integrated with **OpenAPI** { #integrated-with-openapi_1 }"
+      ]
+    },
+    {
+      "name": "sql-databases",
+      "url": "https://raw.githubusercontent.com/fastapi/fastapi/master/docs/en/docs/tutorial/sql-databases.md",
+      "status": "read",
+      "sha256": "a090bb4174b12a5d7bbc84a7e7c3d8d4461d02b23501c59abbed2d894460df9f",
+      "headings": [
+        "## Install `SQLModel` { #install-sqlmodel }",
+        "## Create the App with a Single Model { #create-the-app-with-a-single-model }",
+        "### Create Models { #create-models }",
+        "### Create an Engine { #create-an-engine }",
+        "### Create the Tables { #create-the-tables }",
+        "### Create a Session Dependency { #create-a-session-dependency }",
+        "### Create Database Tables on Startup { #create-database-tables-on-startup }",
+        "### Create a Hero { #create-a-hero }",
+        "### Read Heroes { #read-heroes }",
+        "### Read One Hero { #read-one-hero }",
+        "### Delete a Hero { #delete-a-hero }",
+        "### Run the App { #run-the-app }",
+        "## Update the App with Multiple Models { #update-the-app-with-multiple-models }",
+        "### Create Multiple Models { #create-multiple-models }",
+        "### Create with `HeroCreate` and return a `HeroPublic` { #create-with-herocreate-and-return-a-heropublic }",
+        "### Read Heroes with `HeroPublic` { #read-heroes-with-heropublic }",
+        "### Read One Hero with `HeroPublic` { #read-one-hero-with-heropublic }",
+        "### Update a Hero with `HeroUpdate` { #update-a-hero-with-heroupdate }"
+      ]
+    },
+    {
+      "name": "langchain-quickstart",
+      "url": "https://raw.githubusercontent.com/langchain-ai/docs/ace09e0592332092f2b9c47496632793a4a485cc/src/oss/langchain/quickstart.mdx",
+      "status": "read",
+      "sha256": "9075aa92e35108521c39e5ce34ec4349b7c5e1d9557a0b4a6d3580a1be0536da",
+      "headings": [
+        "## Step 1: Read the guide",
+        "## Step 2: Install dependencies",
+        "## Step 3: Configure model credentials",
+        "## Step 4: Implement the basic agent",
+        "## Step 5: Optional LangSmith tracing",
+        "## Rules",
+        "## Install dependencies",
+        "## Set up API keys",
+        "## Build a basic agent",
+        "## Build a real-world agent",
+        "## Trace agent calls",
+        "## Next steps"
+      ]
+    }
+  ]
+}

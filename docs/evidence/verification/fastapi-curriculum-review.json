@@ -1,0 +1,603 @@
+{
+  "date": "2026-10-29",
+  "status": "pass",
+  "scope": "FastAPI foundation curriculum design only",
+  "curriculumVersion": "FA-CURRICULUM-1.0",
+  "sectionCount": 8,
+  "chapterCount": 42,
+  "mainlineChapters": 41,
+  "optionalChapters": [
+    "F37"
+  ],
+  "milestoneCount": 8,
+  "writingBatches": 16,
+  "prerequisiteGraph": "acyclic; all explicit references precede their chapters",
+  "uniquePages": 42,
+  "diagramAndSourcePlan": "present for every chapter",
+  "localLinksChecked": 29,
+  "implementationFilesCompared": 159,
+  "implementationFilesChanged": [],
+  "tutorialSourceDirectoryCreated": false,
+  "independentReview": "knowledge/demo ordering and source/diagram contract issues fixed and rechecked",
+  "chapters": [
+    {
+      "id": "F01",
+      "title": "看懂一次请求与响应",
+      "slug": "http-request-response",
+      "page": "/learn/fastapi/http-request-response",
+      "requiresChapters": [],
+      "introduces": "客户端/服务器、方法/路径/查询、请求头/正文、响应头/正文、状态码、JSON、主机/端口、进程",
+      "operation": "对照有来源标示的成功响应与错误路径示意；真实本地操作留F05",
+      "diagramAndSource": "HTTP消息往返图，字段与正文解释同步；`labs/f01-http/requests.http`",
+      "optional": false
+    },
+    {
+      "id": "F02",
+      "title": "找到解释器、终端与项目根",
+      "slug": "environment-and-project-root",
+      "page": "/learn/fastapi/environment-and-project-root",
+      "requiresChapters": [
+        "F01"
+      ],
+      "introduces": "Python安装、终端命令/参数、CWD、venv、pip、包/版本、保存/扩展名、PyCharm解释器",
+      "operation": "在明确父目录建项目根/环境；运行检查脚本核对sys.executable、版本与导入，解释错目录/错环境",
+      "diagramAndSource": "解释器/项目/依赖位置图，IDE与终端指向同一个环境；`labs/f02-environment/check_environment.py`",
+      "optional": false
+    },
+    {
+      "id": "F03",
+      "title": "读懂写接口需要的Python",
+      "slug": "python-for-api",
+      "page": "/learn/fastapi/python-for-api",
+      "requiresChapters": [
+        "F02"
+      ],
+      "introduces": "变量/赋值、函数定义与调用、缩进/return、字典/列表、import模块加载、类型提示、注释",
+      "operation": "运行普通函数、修改返回值；说明注解不会自动校验普通直接调用；首次装饰器先建立“登记”的使用直觉",
+      "diagramAndSource": "模块加载与函数调用两条路径图；`labs/f03-python/functions.py`、`imports.py`",
+      "optional": false
+    },
+    {
+      "id": "F04",
+      "title": "创建第一个FastAPI应用",
+      "slug": "first-application",
+      "page": "/learn/fastapi/first-application",
+      "requiresChapters": [
+        "F01",
+        "F02",
+        "F03"
+      ],
+      "introduces": "`FastAPI`来源/大小写、`FastAPI()`调用与实例对象、`app`变量、`@app.get`登记、路径操作函数、字典到JSON",
+      "operation": "从空main.py分A导入/B创建对象/C完整路由；每块有原因注释与位置。普通Python加载可退出，不等于监听",
+      "diagramAndSource": "加载/登记图与对象关系图，禁止提前画数据库/身份；`demo/main.py` 的A/AB/完整路由三个真实提交检查点",
+      "optional": false
+    },
+    {
+      "id": "F05",
+      "title": "启动、请求、停止与重启",
+      "slug": "run-and-call",
+      "page": "/learn/fastapi/run-and-call",
+      "requiresChapters": [
+        "F04"
+      ],
+      "introduces": "Uvicorn/ASGI最少职责、模块:对象启动目标、host/port、两个终端、curl/浏览器/OpenAPI入口、停止信号",
+      "operation": "用显式环境从根启动，GET成功、未登记路径404、停机连接失败，再恢复；改message/路径各做一次对照",
+      "diagramAndSource": "请求执行带匹配分支；停机在连接层结束，404不进函数；`demo/main.py`、`requests.http`，形成M0",
+      "optional": false
+    },
+    {
+      "id": "F06",
+      "title": "保存、重载、断点与分层排错",
+      "slug": "debug-and-recover",
+      "page": "/learn/fastapi/debug-and-recover",
+      "requiresChapters": [
+        "F05"
+      ],
+      "introduces": "traceback、语法/导入/监听/HTTP层、reload子进程、断点/变量、IDE运行位置",
+      "operation": "先手工停止/保存/重启，再加reload观察；PyCharm断点看实际请求函数，分别恢复缩进/错目标/端口占用",
+      "diagramAndSource": "按失败层组织的排错决策图；`labs/f06-debug/` + M0完整恢复源码",
+      "optional": false
+    },
+    {
+      "id": "F07",
+      "title": "路径与查询参数从哪里来",
+      "slug": "path-and-query",
+      "page": "/learn/fastapi/path-and-query",
+      "requiresChapters": [
+        "F03",
+        "F05"
+      ],
+      "introduces": "路径占位、函数参数绑定、默认值/可选值、类型转换、查询参数、Query/Annotated的最少写法",
+      "operation": "先一个task_id，再加status/limit/offset；正常/无效输入对照，解释422位置；不直接写所有过滤条件",
+      "diagramAndSource": "URL字段→参数→函数图与无效参数分支；`demo/main.py`",
+      "optional": false
+    },
+    {
+      "id": "F08",
+      "title": "接收JSON请求体与Pydantic模型",
+      "slug": "request-body-models",
+      "page": "/learn/fastapi/request-body-models",
+      "requiresChapters": [
+        "F07"
+      ],
+      "introduces": "class、实例/字段、BaseModel、类型提示、模型与普通dict区别、Pydantic工具归属",
+      "operation": "先读取一字段，再定义TaskCreate；解释每个模型字段谁提供；请求体不混入服务器id",
+      "diagramAndSource": "JSON→模型字段→函数图；`demo/main.py`，类/字段最小补课在正文之前",
+      "optional": false
+    },
+    {
+      "id": "F09",
+      "title": "验证规则与错误定位",
+      "slug": "validation",
+      "page": "/learn/fastapi/validation",
+      "requiresChapters": [
+        "F08"
+      ],
+      "introduces": "Field、长度/范围、必填/默认、null、枚举/状态、校验错误loc",
+      "operation": "逐个加入标题长度/状态限制；坏字段/缺字段/null对照并修复；不以“框架自动做了”跳过因果",
+      "diagramAndSource": "字段约束验证分支图与错误定位示意；`demo/main.py`",
+      "optional": false
+    },
+    {
+      "id": "F10",
+      "title": "响应模型、状态码与OpenAPI契约",
+      "slug": "responses-and-contracts",
+      "page": "/learn/fastapi/responses-and-contracts",
+      "requiresChapters": [
+        "F09"
+      ],
+      "introduces": "response_model、输入/输出模型分离、过滤字段、uuid、datetime/UTC/序列化、200/201、204语义、Location最少含义",
+      "operation": "先普通dict再TaskRead；逐项解释服务器id/时间来源；/docs核对契约，实际删除204在F11操作",
+      "diagramAndSource": "内部对象→输出模型→客户端过滤图；`demo/main.py`、`requests.http`",
+      "optional": false
+    },
+    {
+      "id": "F11",
+      "title": "完成内存任务CRUD",
+      "slug": "in-memory-crud",
+      "page": "/learn/fastapi/in-memory-crud",
+      "requiresChapters": [
+        "F10"
+      ],
+      "introduces": "内存存储/生命周期、GET/POST/PATCH/DELETE、Response/204无正文、部分更新、未提交字段与显式null",
+      "operation": "按创建→列表/详情→更新→删除逐个加接口，删除后详情404与空正文204分别观察；重启丢数据引出数据库",
+      "diagramAndSource": "CRUD状态与数据去向图，标PATCH字段分支/重启边界；`demo/main.py`",
+      "optional": false
+    },
+    {
+      "id": "F12",
+      "title": "错误处理与一致的失败行为",
+      "slug": "errors-and-http-exceptions",
+      "page": "/learn/fastapi/errors-and-http-exceptions",
+      "requiresChapters": [
+        "F11"
+      ],
+      "introduces": "HTTPException、业务错误/验证错误、404/409、异常与返回、错误契约",
+      "operation": "不存在任务、重复/非法状态转换等具体冲突；先局部HTTPException再必要统一处理；不泄露内部trace",
+      "diagramAndSource": "请求→业务判断→成功/404/409/422结果图；`demo/main.py`",
+      "optional": false
+    },
+    {
+      "id": "F13",
+      "title": "给内存API写第一组测试",
+      "slug": "first-api-tests",
+      "page": "/learn/fastapi/first-api-tests",
+      "requiresChapters": [
+        "F12"
+      ],
+      "introduces": "pytest/test/assert、TestClient、测试函数、fixture的最小含义、可重复状态",
+      "operation": "每接口一个成功/一个失败；请求不依赖正在监听的终端，和真实HTTP检查分别记录；改坏代码看到测试失败",
+      "diagramAndSource": "真实HTTP与TestClient测试两条入口图；`demo/tests/test_tasks.py`，形成M1",
+      "optional": false
+    },
+    {
+      "id": "F14",
+      "title": "从单文件走到包与模块",
+      "slug": "packages-and-entrypoint",
+      "page": "/learn/fastapi/packages-and-entrypoint",
+      "requiresChapters": [
+        "F13"
+      ],
+      "introduces": "模块/包、__init__.py、导入方向、完整路径、入口迁移、共享内存",
+      "operation": "先建包/空文件，迁main并同步启动目标；数据只有一个来源；每个原子组完成复测CRUD",
+      "diagramAndSource": "目录包含图 + 导入依赖图，区分关系；`demo/app/main.py`、`schemas.py`、`store.py`",
+      "optional": false
+    },
+    {
+      "id": "F15",
+      "title": "用APIRouter拆分接口",
+      "slug": "routers",
+      "page": "/learn/fastapi/routers",
+      "requiresChapters": [
+        "F14"
+      ],
+      "introduces": "APIRouter、include_router、prefix/tags、路由装配、保留公开路径",
+      "operation": "先空router再迁一个GET，随后CRUD；不生成全部空分层；启动入口保持能运行",
+      "diagramAndSource": "应用→router→操作的装配图；`demo/app/api/tasks.py`、`app/main.py`",
+      "optional": false
+    },
+    {
+      "id": "F16",
+      "title": "普通函数到Depends",
+      "slug": "dependencies",
+      "page": "/learn/fastapi/dependencies",
+      "requiresChapters": [
+        "F15"
+      ],
+      "introduces": "参数重复/普通调用、Depends供值、谁调用、请求参数来源、子依赖、请求内缓存",
+      "operation": "独立分页函数→两个路由重复→一次注入→复用→同请求/下一请求计数；首例不含ORM/认证",
+      "diagramAndSource": "双版本调用图 + 局部DAG/缓存对照图；`labs/f16-dependencies/`、`demo/app/dependencies.py`",
+      "optional": false
+    },
+    {
+      "id": "F17",
+      "title": "yield与请求资源清理",
+      "slug": "yield-and-resources",
+      "page": "/learn/fastapi/yield-and-resources",
+      "requiresChapters": [
+        "F16"
+      ],
+      "introduces": "生成器暂停/继续、try/finally、上下文管理、打开/使用/关闭、异常传播",
+      "operation": "用可观察的独立资源成功/失败实验理解清理，再说明后续Session承接；不把关闭=提交",
+      "diagramAndSource": "资源生命周期时序图，按锁定框架版本实測顺序；`labs/f17-resources/`",
+      "optional": false
+    },
+    {
+      "id": "F18",
+      "title": "配置、环境变量与依赖锁",
+      "slug": "settings-and-locks",
+      "page": "/learn/fastapi/settings-and-locks",
+      "requiresChapters": [
+        "F17"
+      ],
+      "introduces": "常量→环境→Settings、pydantic-settings归属、默认/覆盖、.env、pyproject/uv、秘密与配置",
+      "operation": "一个配置值先常量再Settings，解释谁读取/何时缓存；pip环境已理解后才用uv，核对同一解释器/锁",
+      "diagramAndSource": "配置来源与优先级图；`demo/app/config.py`、`pyproject.toml`、锁/环境示例，形成M2",
+      "optional": false
+    },
+    {
+      "id": "F19",
+      "title": "表、SQL与持久化",
+      "slug": "sql-and-persistence",
+      "page": "/learn/fastapi/sql-and-persistence",
+      "requiresChapters": [
+        "F11",
+        "F18"
+      ],
+      "introduces": "行/列、主键、索引/唯一约束、SQL查询、关系库与文件、连接",
+      "operation": "先用小SQL读写任务，重启后仍在；和内存版并排说明代价/差别",
+      "diagramAndSource": "内存与SQLite读写对照图、Task字段关系；`labs/f19-sql/`",
+      "optional": false
+    },
+    {
+      "id": "F20",
+      "title": "SQLAlchemy映射与数据库连接",
+      "slug": "sqlalchemy-mapping",
+      "page": "/learn/fastapi/sqlalchemy-mapping",
+      "requiresChapters": [
+        "F19"
+      ],
+      "introduces": "ORM类/表映射、Engine/连接、模型与Pydantic schema区别、SQLAlchemy独立工具",
+      "operation": "逐字段映射任务表，先最小查询再装配demo；不混用SQLModel教程术语或直接贴异步ORM",
+      "diagramAndSource": "Python对象↔表字段映射与schema输出对照；`demo/app/db.py`、`models.py`",
+      "optional": false
+    },
+    {
+      "id": "F21",
+      "title": "每次请求的Session与查询",
+      "slug": "sessions-and-queries",
+      "page": "/learn/fastapi/sessions-and-queries",
+      "requiresChapters": [
+        "F17",
+        "F20"
+      ],
+      "introduces": "Session/连接不是一物、工厂、依赖yield、select/result、关闭",
+      "operation": "先独立查询再迁demo读取接口，说明资源取得与关闭；本章不在未讲commit时暗中完成ORM写入",
+      "diagramAndSource": "请求/依赖/Session/数据库时序；`labs/f21-sessions/`、`demo/app/dependencies.py`",
+      "optional": false
+    },
+    {
+      "id": "F22",
+      "title": "事务、提交与失败回滚",
+      "slug": "transactions",
+      "page": "/learn/fastapi/transactions",
+      "requiresChapters": [
+        "F21"
+      ],
+      "introduces": "unit of work最少含义、commit/flush/refresh、rollback、边界/原子性",
+      "operation": "引入写入/提交后逐个迁CRUD；用同表两条任务变更制造失败验证同次回滚，不增加审计/团队新业务；读路径不乱提交，关闭不代替提交",
+      "diagramAndSource": "事务成功/异常回滚图，数据库效果对照；`demo/app/services/tasks.py`（此时才因业务复用引入service）",
+      "optional": false
+    },
+    {
+      "id": "F23",
+      "title": "Alembic迁移与已有数据",
+      "slug": "migrations",
+      "page": "/learn/fastapi/migrations",
+      "requiresChapters": [
+        "F22"
+      ],
+      "introduces": "schema变化/版本链、revision/upgrade/downgrade、autogenerate限制",
+      "operation": "在已有任务数据上加字段/索引，升级后保留数据；失败在可丢弃副本恢复，不以删库重建升级",
+      "diagramAndSource": "迁移链/前后schema图；`demo/migrations/`",
+      "optional": false
+    },
+    {
+      "id": "F24",
+      "title": "隔离测试数据库并验收持久化",
+      "slug": "database-testing",
+      "page": "/learn/fastapi/database-testing",
+      "requiresChapters": [
+        "F13",
+        "F23"
+      ],
+      "introduces": "独立测试库、fixture建立/清理、依赖替换、状态污染/重复运行",
+      "operation": "测CRUD/422/404/409、重启保留、回滚/迁移，确认测试不动自己的学习数据库",
+      "diagramAndSource": "应用/测试库隔离与清理时序；`demo/tests/conftest.py`、`test_persistence.py`，形成M3",
+      "optional": false
+    },
+    {
+      "id": "F25",
+      "title": "用户模型与密码哈希",
+      "slug": "users-and-passwords",
+      "page": "/learn/fastapi/users-and-passwords",
+      "requiresChapters": [
+        "F08",
+        "F23",
+        "F24"
+      ],
+      "introduces": "用户表/唯一标识、哈希/salt/验证、密码与hash、响应不泄露、密码库",
+      "operation": "先独立hash/verify实验再注册；冲突409；UserRead排除秘密，迁移先建新表",
+      "diagramAndSource": "密码输入→哈希→验证/安全输出图；`demo/app/security.py`、`api/users.py`、迁移",
+      "optional": false
+    },
+    {
+      "id": "F26",
+      "title": "登录与Bearer令牌",
+      "slug": "login-and-tokens",
+      "page": "/learn/fastapi/login-and-tokens",
+      "requiresChapters": [
+        "F25"
+      ],
+      "introduces": "JSON登录模型、签名JWT/claims/exp、Bearer header、HTTPBearer/认证依赖、401、密钥/过期",
+      "operation": "主线用JSON登录+HTTPBearer，沿用已讲请求体，不隐藏未来Form/OAuth2前提；验证签名/过期后取用户，无令牌/坏/过期分别观察",
+      "diagramAndSource": "登录时序 + 后续请求认证流程；`demo/app/api/auth.py`、`security.py`、`dependencies.py`",
+      "optional": false
+    },
+    {
+      "id": "F27",
+      "title": "任务归属与对象访问边界",
+      "slug": "ownership",
+      "page": "/learn/fastapi/ownership",
+      "requiresChapters": [
+        "F26"
+      ],
+      "introduces": "owner_id/外键、认证vs授权、列表过滤/单对象检查、对象存在性策略、已有数据策略",
+      "operation": "创建时由当前用户赋owner；两用户交叉访问；既有匿名数据用明确迁移/认领或拒绝策略，不能静默丢弃",
+      "diagramAndSource": "用户→任务归属图 + 列表/详情授权分支；`demo/app/models.py`、`api/tasks.py`、迁移",
+      "optional": false
+    },
+    {
+      "id": "F28",
+      "title": "验收完整同步版本",
+      "slug": "synchronous-demo-checkpoint",
+      "page": "/learn/fastapi/synchronous-demo-checkpoint",
+      "requiresChapters": [
+        "F27"
+      ],
+      "introduces": "业务闭环与安全回归、使用说明、启动与恢复",
+      "operation": "从干净环境注册/登录/CRUD/筛选分页，重启/迁移保留，跨用户隔离，测试重跑；列明基础令牌撤销边界",
+      "diagramAndSource": "同步版完整请求架构 + 两用户操作泳道；`demo/`全集合及`tests/test_auth.py`，形成M4",
+      "optional": false
+    },
+    {
+      "id": "F29",
+      "title": "def、async def与阻塞",
+      "slug": "concurrency-and-async",
+      "page": "/learn/fastapi/concurrency-and-async",
+      "requiresChapters": [
+        "F03",
+        "F28"
+      ],
+      "introduces": "协程/事件循环/await、阻塞IO/CPU、线程池、并发不等于并行",
+      "operation": "同步等待→错误阻塞async→可等待IO对照；先小实验后确定demo要改哪些调用",
+      "diagramAndSource": "并发时间线，等待/执行分区；`labs/f29-concurrency/`",
+      "optional": false
+    },
+    {
+      "id": "F30",
+      "title": "lifespan与应用级资源",
+      "slug": "lifespan",
+      "page": "/learn/fastapi/lifespan",
+      "requiresChapters": [
+        "F17",
+        "F29"
+      ],
+      "introduces": "asynccontextmanager、应用启动/运行/关闭、共享资源/请求资源、app.state",
+      "operation": "一个应用级资源创建一次，用后关闭；启动失败与关闭可观察，区别Session每请求生命周期",
+      "diagramAndSource": "应用/请求资源双泳道时间线；`labs/f30-lifespan/`、`demo/app/main.py`",
+      "optional": false
+    },
+    {
+      "id": "F31",
+      "title": "升级AsyncSession与PostgreSQL",
+      "slug": "async-database-upgrade",
+      "page": "/learn/fastapi/async-database-upgrade",
+      "requiresChapters": [
+        "F23",
+        "F24",
+        "F29",
+        "F30"
+      ],
+      "introduces": "数据库服务、驱动、AsyncEngine/AsyncSession、await、工厂/池、PostgreSQL差异、数据迁移",
+      "operation": "先独立PostgreSQL连接再逐项换同步ORM；不同根/配置保留同步M4；数据库DDL迁移与SQLite数据搬迁分别验证",
+      "diagramAndSource": "同步/异步调用对照 + Session生命周期；`demo/app/db.py`、models/dependencies、迁移与数据迁移操作",
+      "optional": false
+    },
+    {
+      "id": "F32",
+      "title": "HTTPX调用、超时与测试替身",
+      "slug": "outbound-http",
+      "page": "/learn/fastapi/outbound-http",
+      "requiresChapters": [
+        "F30",
+        "F31"
+      ],
+      "introduces": "AsyncClient、请求级超时、外部HTTP失败、连接复用、MockTransport、幂等与重试",
+      "operation": "先真实本地可控服务，再可复测替身；为任务摘要提供可选外部适配，默认本地mock可用，不需要收费模型；不无限重试写请求",
+      "diagramAndSource": "浏览器→API→外部适配成功/超时/失败时序；`demo/app/integrations/summary.py`、`labs/f32-httpx/`",
+      "optional": false
+    },
+    {
+      "id": "F33",
+      "title": "验证异步升级没有破坏原契约",
+      "slug": "async-regression",
+      "page": "/learn/fastapi/async-regression",
+      "requiresChapters": [
+        "F28",
+        "F32"
+      ],
+      "introduces": "异步测试runner/fixture、lifespan启动、资源关闭、业务回归与并发边界",
+      "operation": "复用M4请求契约，补PostgreSQL集成测试、外部超时/取消/清理；async测试与TestClient不同入口说明",
+      "diagramAndSource": "测试入口/资源开启关闭时序；`demo/tests/test_async_api.py`、`test_summary.py`，形成M5",
+      "optional": false
+    },
+    {
+      "id": "F34",
+      "title": "中间件、日志与请求定位",
+      "slug": "middleware-and-logging",
+      "page": "/learn/fastapi/middleware-and-logging",
+      "requiresChapters": [
+        "F33"
+      ],
+      "introduces": "请求/响应包围、request_id、结构化日志、耗时/异常、敏感字段脱敏",
+      "operation": "一个计时/请求id中间件开始，追踪成功与异常；不记录密码/令牌，避免把middleware当业务权限",
+      "diagramAndSource": "请求往返包围与异常传播图；`demo/app/middleware.py`、日志配置",
+      "optional": false
+    },
+    {
+      "id": "F35",
+      "title": "CORS与最小浏览器客户端",
+      "slug": "browser-client-and-cors",
+      "page": "/learn/fastapi/browser-client-and-cors",
+      "requiresChapters": [
+        "F26",
+        "F34"
+      ],
+      "introduces": "origin、预检/allowlist、浏览器与curl不同、fetch/Promise最少补课、令牌header",
+      "operation": "分开端口运行极薄客户端，登录/查看/操作任务；CORS拒绝与正常对照；不是完整前端框架教学",
+      "diagramAndSource": "浏览器预检/真实请求双阶段时序；`demo/client/index.html`、`app/main.py`",
+      "optional": false
+    },
+    {
+      "id": "F36",
+      "title": "上传附件与文件边界",
+      "slug": "task-attachments",
+      "page": "/learn/fastapi/task-attachments",
+      "requiresChapters": [
+        "F27",
+        "F33"
+      ],
+      "introduces": "multipart、UploadFile/流、路径/UUID、大小限制、文件与DB非同一事务",
+      "operation": "挂到当前用户任务，上传/读/删；拒绝不合大小/类型/越权，写文件或写DB失败给清理/恢复；不信任客户端文件名",
+      "diagramAndSource": "上传/权限/存储/元数据成功与补偿分支；`demo/app/api/attachments.py`、`storage.py`",
+      "optional": false
+    },
+    {
+      "id": "F37",
+      "title": "BackgroundTasks：先认识能力边界",
+      "slug": "background-tasks",
+      "page": "/learn/fastapi/background-tasks",
+      "requiresChapters": [
+        "F30",
+        "F34"
+      ],
+      "introduces": "响应后执行、进程内任务/丢失风险、失败记录、同步vs任务队列",
+      "operation": "**选读独立实验**：非关键后处理，停止进程观察丢失风险；不承诺可靠任务或把它用作结课持久导入功能",
+      "diagramAndSource": "响应与后台执行时间线，进程关闭边界；`labs/f37-background-tasks/`；结课demo不依赖本实验",
+      "optional": true
+    },
+    {
+      "id": "F38",
+      "title": "测试夹具、回归集与CI",
+      "slug": "test-suite-and-ci",
+      "page": "/learn/fastapi/test-suite-and-ci",
+      "requiresChapters": [
+        "F13",
+        "F24",
+        "F33",
+        "F35",
+        "F36"
+      ],
+      "introduces": "app工厂/隔离配置、测试分层、测试夹具复用、lint/type边界、CI环境",
+      "operation": "将原业务/资源/上传/客户端边界检查组织为可重复套件；本地测试与真实服务检查并存；演练一个失败",
+      "diagramAndSource": "单元/集成/HTTP层与隔离资源图；`demo/tests/`、工作流与运行脚本，形成M6",
+      "optional": false
+    },
+    {
+      "id": "F39",
+      "title": "生产配置、健康与就绪",
+      "slug": "production-runtime",
+      "page": "/learn/fastapi/production-runtime",
+      "requiresChapters": [
+        "F18",
+        "F30",
+        "F38"
+      ],
+      "introduces": "dev/prod、reload退出、进程/worker、liveness/readiness、数据库未就绪、秘密/环境、超时",
+      "operation": "生产方式启动；数据库断开、端口/配置错分别观察；健康不因模型服务收费/不可用就伪造成功",
+      "diagramAndSource": "启动/就绪决策 + 应用/数据库失败边界；`demo/app/health.py`、配置/部署环境示例",
+      "optional": false
+    },
+    {
+      "id": "F40",
+      "title": "Docker与Compose运行同一个应用",
+      "slug": "docker-delivery",
+      "page": "/learn/fastapi/docker-delivery",
+      "requiresChapters": [
+        "F31",
+        "F39"
+      ],
+      "introduces": "镜像/容器、构建上下文、容器端口/网络/卷、数据库服务/健康、非root",
+      "operation": "先应用镜像再Compose数据库，解释每条必需配置；HTTP闭环/停止/重建/数据卷持续；不恢复github.io",
+      "diagramAndSource": "用户→容器端口→API→PostgreSQL/文件卷拓扑；`demo/Dockerfile`、`compose.yaml`",
+      "optional": false
+    },
+    {
+      "id": "F41",
+      "title": "备份、恢复与升级演练",
+      "slug": "backup-and-recovery",
+      "page": "/learn/fastapi/backup-and-recovery",
+      "requiresChapters": [
+        "F23",
+        "F36",
+        "F40"
+      ],
+      "introduces": "数据与文件备份一致性、迁移前备份、恢复验证、版本回退限制",
+      "operation": "可丢弃环境备份DB/附件后恢复；旧数据验证、升级失败恢复，应用回退与数据回退分别说明",
+      "diagramAndSource": "升级/备份/恢复状态图，标成功判据；`demo/ops/`、README/恢复操作说明",
+      "optional": false
+    },
+    {
+      "id": "F42",
+      "title": "从空环境交付完整demo",
+      "slug": "complete-demo",
+      "page": "/learn/fastapi/complete-demo",
+      "requiresChapters": [
+        "F28",
+        "F38",
+        "F41"
+      ],
+      "introduces": "完整文件集合、安装/启动/体验/测试/清理、复现验收、能力边界",
+      "operation": "作者照文档从零安装，注册/登录/CRUD/筛选分页/附件、数据重启、权限/错误/回滚、测试/容器恢复全部通过；留下版本/源码索引",
+      "diagramAndSource": "最终部署/请求架构图 + 用户操作主线，拆两图不塞一屏；`demo/`全集合，形成M7",
+      "optional": false
+    }
+  ],
+  "limits": [
+    "No tutorial prose or executable demo",
+    "No chapter routes/navigation changes",
+    "No Python/demo or beginner validation",
+    "Course graph source is not rendered lesson artwork"
+  ]
+}

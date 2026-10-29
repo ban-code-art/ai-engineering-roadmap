@@ -4,6 +4,8 @@
 
 顶部课程入口：FastAPI 教程（`/learn`）、FastAPI 项目实战（`/project`）、LangChain 项目实战（`/project/langchain`）、RAG 项目实战（`/project/rag`）。四个课程统一模板，当前均未发布教学章节。
 
+当前已规划[FastAPI基础教程脉络](docs/planning/fastapi-curriculum.md)：8个分区、42个独立章节，先基础再工程，最终逐步完成任务管理API demo。每章的前置、操作、配图、源码路径与固定GitHub跳转规则已设计；本轮尚未写正文、教学代码或章节页面。独立FastAPI项目实战栏目随后另做。
+
 ## 本地运行
 
 需要Node.js 24–26。依赖只由 `web/package-lock.json` 管理：
