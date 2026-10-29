@@ -19,6 +19,7 @@
 - 实际复制functions.py的201字符与固定文件一致。独立审阅复核15份manifest的Git对象hash、生成快照一致，courses目录diff为空。
 - 16组UI文字对比度均≥4.5（最小5.29）；代码小字在浅/深普通与重点底上均≥4.5，自动接受检查覆盖注释/函数/字符串等token。
 - 截图：[浅色代码](reading-refresh/code-light.png)、[深色代码](reading-refresh/code-dark.png)、[桌面对照](reading-refresh/cards-desktop.png)。
+- 改造提交bd1f8cfd542fe73337da8fa99308af048c6f064b已推送；[GitHub CI40870743773](https://github.com/ban-code-art/ai-engineering-roadmap/actions/runs/40870743773)结果success。
 
 ## 边界
 

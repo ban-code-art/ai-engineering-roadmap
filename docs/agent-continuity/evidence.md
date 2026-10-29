@@ -2,7 +2,7 @@
 
 ## Recent
 
-- file: 最新展示改造见reading-refresh.md及官方code-reading-audit.json：28前端检查/build/typecheck/双模式路由通过；纯代码结构、源/hash不变、桌面手机/双主题、201字符复制匹配验证；LC-DOCS-2.1更新。
+- file: 最新展示改造bd1f8cf已推送，GitHub CI40870743773 success；reading-refresh.md及官方code-reading-audit.json记录28检查/build/typecheck/双模式路由、纯代码结构、源/hash不变、桌面手机/双主题及201字符复制匹配；LC-DOCS-2.1更新。
 
 - cmd: Python3.12.4干净Windows环境实际执行windows.ps1，pip安装14包锁、pip check/导入成功，错目录/解释器失败后恢复；9个unittest通过，详见fastapi-w01-labs.json。
 - cmd: npm --userconfig=NUL run setup/build/typecheck/build:framework完成；最终23测试全部通过、三章SSG成功；命令级配置覆盖只解决本机npm冲突。
